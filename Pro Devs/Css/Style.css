@@ -1,0 +1,134 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    background: #222;
+}
+
+
+
+
+
+
+
+
+    .welcome-section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .welcome-section .lead {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .welcome-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .welcome-section a {
+        color: #ffffff;
+    }
+
+        .welcome-section a:hover {
+            color: #f0f0f0;
+        }
+
+
+/* Advertisement Section */
+.ad-section {
+    padding: 50px 0;
+}
+
+.ad-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .ad-card img {
+        height: 200px;
+        width:200px;
+        object-fit: cover;
+    }
+
+.ad-content {
+    padding: 20px;
+}
+
+    .ad-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .ad-content p {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .ad-content .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+  .ad-content .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+/* Phone Card Section */
+.phone-card-section {
+    padding: 50px 0;
+}
+
+    .phone-card-section .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .phone-card-section .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .phone-card-section .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .phone-card-section .card-text {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .phone-card-section .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+        .phone-card-section .btn-primary:hover {
+            background-color: #0056b3;
+        }
