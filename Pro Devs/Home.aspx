@@ -14,7 +14,7 @@
         <p>Explore our range of products and find the perfect watch for you. We offer a wide selection of the latest watches, from top brands to budget-friendly options.</p>
         <p>
           <a href="#" class="btn btn-success">Products</a>
-          <a href="#" class="btn btn-secondary">Browse Categories</a>
+          <a href="#" class="btn btn-warning">Browse Categories</a>
         </p>
       </div>
     </div>
@@ -50,11 +50,11 @@
     <div class="row">
         <!-- Smart watch-->
         <div class="col-md-4 mb-4">
-            <div class="ad-card text-center">
+            <div class="watch-card  text-center">
                 <img src="img/w3.jpg" class="img-fluid"  alt="Watches">
                 <div class="ad-content">
-                     <h3>Smart Watches</h3>
-                     <p>Discover the latest smartwatches with advanced features and connectivity options.</p>
+                     <h3 class="text-warning">Smart Watches</h3>
+                     <p class="text-description">Discover the latest smartwatches with advanced features and connectivity options.</p>
                     <a href="#" class="btn btn-success">Explore Smart Watches</a>
                 </div>
             </div>
@@ -62,11 +62,11 @@
 
          <!-- Rolex Watches -->
         <div class="col-md-4 mb-4">
-            <div class="ad-card text-center">
+            <div class="watch-card  text-center">
                 <img src="img/rolexHo.jpg" class="img-fluid" alt="Watches">
                 <div class="ad-content">
-                    <h3>Rolex</h3>
-                     <p>Explore our collection of premium Rolex watches known for their luxury and precision.</p>
+                    <h3 class="text-warning">Rolex</h3>
+                     <p class="text-description">Explore our collection of premium Rolex watches known for their luxury and precision.</p>
                      <a href="#" class="btn btn-success">Explore Rolex</a>
                 </div>
             </div>
@@ -77,12 +77,12 @@
 
         <!-- Omega Watches -->
         <div class="col-md-4 mb-4">
-  <div class="card ad-card text-center">
-    <img src="img/omegaW.jpg" class="card-img-top img-fluid" alt="Watches">
-    <div class="card-body ad-content">
-      <h3 class="card-title">Omega</h3>
-      <p class="card-text">Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>
-      <a href="#" class="btn btn-success">Explore Omega Watches</a>
+        <div class=" watch-card  text-center">
+         <img src="img/omegaW.jpg" class="card-img-top img-fluid" alt="Watches">
+          <div class="card-body ad-content">
+           <h3 class="text-warning">Omega</h3>
+           <p class="text-description">Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>
+         <a href="#" class="btn btn-success">Explore Omega Watches</a>
     </div>
   </div>
 </div>
@@ -93,39 +93,40 @@
 
 <!-- New Arrivals Section -->
 <div class="new-arrivals-section container mt-5">
-    <h2 class="text-center mb-4">New Arrivals</h2>
+    <h2 class="text-center text-warning mb-4">New Arrivals</h2>
     <div class="row">
-        <!-- New Arrival Item 1 -->
+         <!-- Samsung Smartwatch -->
         <div class="col-md-4 mb-4">
             <div class="new-arrival-card text-center">
                 <img src="img/watch1.jpg" class="img-fluid" alt="New Arrival 1">
                 <div class="new-arrival-content">
-                    <h3>New Arrival 1</h3>
-                    <p>Brief description of the new arrival 1.</p>
+                     <h3 class="text-warning">Samsung Smartwatch</h3>
+                    <p class="text-description">Experience the future of wearables with the Samsung Smartwatch. Featuring cutting-edge technology, sleek design, and seamless connectivity, this smartwatch is your perfect companion for a smart lifestyle.</p>
                     <a href="#" class="btn btn-success">View Details</a>
                 </div>
             </div>
         </div>
 
-        <!-- New Arrival Item 2 -->
+        <!-- rolex -->
         <div class="col-md-4 mb-4">
             <div class="new-arrival-card text-center">
                 <img src="img/A.jpg" class="img-fluid" alt="New Arrival 2">
                 <div class="new-arrival-content">
-                    <h3>New Arrival 2</h3>
-                    <p>Brief description of the new arrival 2.</p>
+                     <h3 class="text-warning">Rolex</h3>
+                     <p class="text-description">Introducing the latest addition to our luxury collection, the Rolex. Known for its timeless elegance and exceptional craftsmanship, this watch is a true symbol of prestige and sophistication.</p>
+                   
                     <a href="#" class="btn btn-success">View Details</a>
                 </div>
             </div>
         </div>
 
-        <!-- New Arrival Item 3 -->
+        <!-- New smartwatch 1 -->
         <div class="col-md-4 mb-4">
             <div class="new-arrival-card text-center">
                 <img src="img/w4.jpg" class="img-fluid" alt="New Arrival 3">
                 <div class="new-arrival-content">
-                    <h3>New Arrival 3</h3>
-                    <p>Brief description of the new arrival 3.</p>
+                    <h3 class="text-warning">Apple Smartwatch</h3>
+                    <p class="text-description">Discover the ultimate blend of style and functionality with the Apple Smartwatch. Packed with advanced features and designed for everyday use, this smartwatch helps you stay connected and active.</p>
                     <a href="#" class="btn btn-success">View Details</a>
                 </div>
             </div>
@@ -139,7 +140,7 @@
 
 <!-- All Watches Section -->
 <div class="all-watches-section container mt-5">
-    <h2 class="text-center mb-4">All Watches Available</h2>
+    <h2 class="text-center text-warning mb-4">Available</h2> 
     <div class="row">
         <!-- Smart Watches -->
         <div class="col-md-4 mb-4">
