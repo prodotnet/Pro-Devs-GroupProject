@@ -1,17 +1,52 @@
-﻿using System;
+﻿using Pro_Devs.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HashPass;
 
 namespace Pro_Devs
 {
     public partial class UserLogin : System.Web.UI.Page
     {
+
+        ServiceClient SC = new ServiceClient();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
+
+
+        protected void Login_Click(object sender, EventArgs e)
+        {
+            string Email = email.Value;
+            string Password = password.Value;
+
+
+            string hashedPassword = Secrecy.HashPassword(Password);
+
+            int id = SC.Login(Email, hashedPassword);
+
+
+
+            if (id != 0)
+            {
+                Session["Logged in"] = id;
+                Response.Redirect("Home.aspx");
+            }
+            else
+            {
+                Label1.Text = "Incorrect Email or Password";
+            }
+
+
+        }
+        
     }
+
+    
 }

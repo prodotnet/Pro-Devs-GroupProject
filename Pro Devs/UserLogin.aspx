@@ -31,11 +31,11 @@
               <div class="row gy-2 gy-md-3 overflow-hidden">
                 <div class="col-12">
                   <label for="email" class="form-label text-light">Email <span class="text-danger">*</span></label>
-                  <input type="email" class="form-control" name="email" id="email"  required>
+                  <input type="email" class="form-control" name="email" id="email"  runat="server" required>
                 </div>
                 <div class="col-12">
                   <label for="password" class="form-label text-light">Password <span class="text-danger">*</span></label>
-                  <input type="password" class="form-control" name="password" id="password" value="" required>
+                  <input type="password" class="form-control" name="password" id="password" runat="server" required>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
@@ -44,10 +44,15 @@
                       Remember Me
                     </label>
                   </div>
+
+                  <div class="col-12">
+                    <asp:Label ID="Label1" runat="server" ForeColor="Red" Font-Size="Small"></asp:Label>
+                </div>
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn bsb-btn-xl btn-success" type="submit">Submit</button>
+                   
+                      <asp:Button ID="Button1" class="btn bsb-btn-xl btn-success" runat="server"  type="submit" Text="Submit" OnClick="Login_Click" />
                   </div>
                 </div>
               </div>
