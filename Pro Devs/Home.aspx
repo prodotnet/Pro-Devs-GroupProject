@@ -9,7 +9,7 @@
     <div class="carousel-item active">
       <img src="img/home/watt3.jpg" class="d-block w-100 carousel-image" alt="Watch 1">
       <div class="carousel-caption d-none d-md-block">
-        <h1 class="display-4">Welcome to Pro Devs!</h1>
+        <h1 class="display-4">Welcome to WatchHub!</h1>
         <p class="lead">Redefining time keeping.</p>
         <p>Explore our range of products and find the perfect watch for you. We offer a wide selection of the latest watches, from top brands to budget-friendly options.</p>
         <p>
