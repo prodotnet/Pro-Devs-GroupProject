@@ -22,6 +22,11 @@
       <img src="img/home/wat2.jpg" class="d-block w-100 carousel-image" alt="Watch 2">
       <div class="carousel-caption d-none d-md-block">
          <p>Rolex watches are celebrated for their reliability, luxurious materials, and their role as a status symbol in the world of horology.</p>
+          <p>
+
+          <a href="#" class="btn btn-success">Products</a>
+          <a href="#" class="btn btn-warning">Browse Categories</a>
+      </p>
       </div>
     </div>
     <div class="carousel-item">
@@ -29,7 +34,13 @@
       <div class="carousel-caption d-none d-md-block">
       
       <p>Smart watches provide seamless integration with your smartphone, allowing you to manage notifications, track activities, and access apps right from your wrist.</p>
-     </div>
+      <p>
+
+          <a href="#" class="btn btn-success">Products</a>
+          <a href="#" class="btn btn-warning">Browse Categories</a>
+      </p>
+      
+      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -47,7 +58,7 @@
 
 <!-- Advertisement Section -->
 <div class="ad-section container mt-5">
-    <div class="row">
+    <div class="row"  id="ViewCatagorty" runat="server">
         <!-- Smart watch-->
         <div class="col-md-4 mb-4">
             <div class="watch-card  text-center">
@@ -55,7 +66,7 @@
                 <div class="ad-content">
                      <h3 class="text-warning">Smart Watches</h3>
                      <p class="text-description">Discover the latest smartwatches with advanced features and connectivity options.</p>
-                    <a href="#" class="btn btn-success">Explore Smart Watches</a>
+                    <a href="#" class="btn btn-success">Explore </a>
                 </div>
             </div>
         </div>
@@ -67,7 +78,7 @@
                 <div class="ad-content">
                     <h3 class="text-warning">Rolex</h3>
                      <p class="text-description">Explore our collection of premium Rolex watches known for their luxury and precision.</p>
-                     <a href="#" class="btn btn-success">Explore Rolex</a>
+                     <a href="#" class="btn btn-success">Explore</a>
                 </div>
             </div>
         </div>
@@ -78,11 +89,11 @@
         <!-- Omega Watches -->
         <div class="col-md-4 mb-4">
         <div class=" watch-card  text-center">
-         <img src="img/omegaW.jpg" class="card-img-top img-fluid" alt="Watches">
+         <img src="img/Om.jpg" class="card-img-top img-fluid" alt="Watches">
           <div class="card-body ad-content">
            <h3 class="text-warning">Omega</h3>
            <p class="text-description">Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>
-         <a href="#" class="btn btn-success">Explore Omega Watches</a>
+         <a href="#" class="btn btn-success">Explore</a>
     </div>
   </div>
 </div>
@@ -139,83 +150,11 @@
 
 
 <!-- All Watches Section -->
-<div class="all-watches-section container mt-5">
-    <h2 class="text-center text-warning mb-4">Available</h2> 
-    <div class="row">
-        <!-- Smart Watches -->
-        <div class="col-md-4 mb-4">
-            <div class="watch-card text-center">
-                <img src="img/w3.jpg" class="img-fluid" alt="Smart Watch 1">
-                <div class="watch-content">
-                    <h5 class="text-success">Apple Watch Series 7</h5>
-                    <p class="text-warning">Price: R7,499</p>
-                    <p class="text-description">The Apple Watch Series 7 features a larger and more durable display with advanced health tracking capabilities and fast charging.</p>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="watch-card text-center">
-                <img src="img/watch2.jpg" class="img-fluid" alt="Smart Watch 2">
-                <div class="watch-content">
-                    <h5 class="text-success">Samsung Galaxy Watch 4</h5>
-                    <p class="text-warning">Price: R5,999</p>
-                    <p class="text-description">The Samsung Galaxy Watch 4 offers a sleek design, comprehensive fitness tracking, and the latest Wear OS for seamless integration with Android devices.</p>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Rolex Watches -->
-        <div class="col-md-4 mb-4">
-            <div class="watch-card text-center">
-                <img src="img/rolex2.jpg" class="img-fluid" alt="Rolex Submariner">
-                <div class="watch-content">
-                    <h5 class="text-success">Rolex Submariner</h5>
-                    <p class="text-warning">Price: R129,000</p>
-                    <p class="text-description">The Rolex Submariner is a classic diving watch known for its robustness, elegant design, and exceptional timekeeping accuracy.</p>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="watch-card text-center">
-                <img src="img/wa2.jpg" class="img-fluid" alt="Rolex Day-Date">
-                <div class="watch-content">
-                    <h5 class="text-success">Rolex Day-Date</h5>
-                    <p class="text-warning">Price: R165,000</p>
-                    <p class="text-description">The Rolex Day-Date is a prestigious watch with a distinctive design, featuring a day and date display and a choice of precious metals.</p>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Omega Watches -->
-        <div class="col-md-4 mb-4">
-            <div class="watch-card text-center">
-                <img src="img/omega1.jpg" class="img-fluid" alt="Omega Speedmaster Professional">
-                <div class="watch-content">
-                    <h5 class="text-success">Omega Speedmaster Professional</h5>
-                    <p class="text-warning">Price: R72,000</p>
-                    <p class="text-description">The Omega Speedmaster Professional is renowned for its history as the "Moonwatch" and offers precision, durability, and a timeless design.</p>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="watch-card text-center">
-                <img src="img/omega3.jpg" class="img-fluid" alt="Omega Seamaster Diver 300M">
-                <div class="watch-content">
-                    <h5 class="text-success">Omega Seamaster Diver 300M</h5>
-                    <p class="text-warning">Price: R89,000</p>
-                    <p class="text-description">The Omega Seamaster Diver 300M is a professional-grade diving watch with advanced water resistance and a distinctive helium escape valve.</p>
-                    <a href="#" class="btn btn-success">Add to Cart</a>
-                </div>
-            </div>
-        </div>
+<div class="all-watches-section container mt-5"  >
+    <h2 class="text-center text-warning mb-4">Products</h2> 
+    
+    <div class="row" id="AllProducts" runat="server">
+        
     </div>
 </div>
 
