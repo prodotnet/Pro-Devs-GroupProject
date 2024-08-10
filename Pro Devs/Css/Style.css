@@ -185,3 +185,25 @@ hr{
 .text-description{
     color:white;
 }
+
+.sorting-section {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-select {
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid #28a745; 
+    padding: 5px;
+}
+
+    .form-select:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); 
+    }
+
+label {
+    font-weight: bold;
+}

@@ -170,11 +170,41 @@ namespace Pro_Devs.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
         System.Threading.Tasks.Task<int> LoginAsync(string email, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddProduct", ReplyAction="http://tempuri.org/IService/AddProductResponse")]
+        bool AddProduct(Pro_Devs.ServiceReference1.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddProduct", ReplyAction="http://tempuri.org/IService/AddProductResponse")]
+        System.Threading.Tasks.Task<bool> AddProductAsync(Pro_Devs.ServiceReference1.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateProduct", ReplyAction="http://tempuri.org/IService/UpdateProductResponse")]
+        bool UpdateProduct(Pro_Devs.ServiceReference1.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateProduct", ReplyAction="http://tempuri.org/IService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(Pro_Devs.ServiceReference1.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProduct", ReplyAction="http://tempuri.org/IService/GetProductResponse")]
+        Pro_Devs.ServiceReference1.Product GetProduct(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProduct", ReplyAction="http://tempuri.org/IService/GetProductResponse")]
+        System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product> GetProductAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllProducts", ReplyAction="http://tempuri.org/IService/GetAllProductsResponse")]
         Pro_Devs.ServiceReference1.Product[] GetAllProducts();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllProducts", ReplyAction="http://tempuri.org/IService/GetAllProductsResponse")]
         System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProductsByCategory", ReplyAction="http://tempuri.org/IService/GetProductsByCategoryResponse")]
+        Pro_Devs.ServiceReference1.Product[] GetProductsByCategory(string category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProductsByCategory", ReplyAction="http://tempuri.org/IService/GetProductsByCategoryResponse")]
+        System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByCategoryAsync(string category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteProduct", ReplyAction="http://tempuri.org/IService/DeleteProductResponse")]
+        bool DeleteProduct(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteProduct", ReplyAction="http://tempuri.org/IService/DeleteProductResponse")]
+        System.Threading.Tasks.Task<bool> DeleteProductAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -220,12 +250,52 @@ namespace Pro_Devs.ServiceReference1 {
             return base.Channel.LoginAsync(email, password);
         }
         
+        public bool AddProduct(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.AddProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddProductAsync(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.AddProductAsync(product);
+        }
+        
+        public bool UpdateProduct(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.UpdateProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.UpdateProductAsync(product);
+        }
+        
+        public Pro_Devs.ServiceReference1.Product GetProduct(int id) {
+            return base.Channel.GetProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product> GetProductAsync(int id) {
+            return base.Channel.GetProductAsync(id);
+        }
+        
         public Pro_Devs.ServiceReference1.Product[] GetAllProducts() {
             return base.Channel.GetAllProducts();
         }
         
         public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetAllProductsAsync() {
             return base.Channel.GetAllProductsAsync();
+        }
+        
+        public Pro_Devs.ServiceReference1.Product[] GetProductsByCategory(string category) {
+            return base.Channel.GetProductsByCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByCategoryAsync(string category) {
+            return base.Channel.GetProductsByCategoryAsync(category);
+        }
+        
+        public bool DeleteProduct(int id) {
+            return base.Channel.DeleteProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteProductAsync(int id) {
+            return base.Channel.DeleteProductAsync(id);
         }
     }
 }

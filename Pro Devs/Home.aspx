@@ -13,8 +13,8 @@
         <p class="lead">Redefining time keeping.</p>
         <p>Explore our range of products and find the perfect watch for you. We offer a wide selection of the latest watches, from top brands to budget-friendly options.</p>
         <p>
-          <a href="#" class="btn btn-success">Products</a>
-          <a href="#" class="btn btn-warning">Browse Categories</a>
+           <a href="#Products" class="btn btn-success">Products</a>
+           <a href="#Catagorty" class="btn btn-warning">Browse Categories</a>
         </p>
       </div>
     </div>
@@ -24,8 +24,8 @@
          <p>Rolex watches are celebrated for their reliability, luxurious materials, and their role as a status symbol in the world of horology.</p>
           <p>
 
-          <a href="#" class="btn btn-success">Products</a>
-          <a href="#" class="btn btn-warning">Browse Categories</a>
+          <a href="#Products" class="btn btn-success">Products</a>
+          <a href="#Catagorty" class="btn btn-warning">Browse Categories</a>
       </p>
       </div>
     </div>
@@ -36,8 +36,8 @@
       <p>Smart watches provide seamless integration with your smartphone, allowing you to manage notifications, track activities, and access apps right from your wrist.</p>
       <p>
 
-          <a href="#" class="btn btn-success">Products</a>
-          <a href="#" class="btn btn-warning">Browse Categories</a>
+         <a href="#Products" class="btn btn-success">Products</a>
+         <a href="#Catagorty" class="btn btn-warning">Browse Categories</a>
       </p>
       
       </div>
@@ -56,8 +56,9 @@
   
 
 
-<!-- Advertisement Section -->
-<div class="ad-section container mt-5">
+<!-- Categories Section -->
+<div class="ad-section container mt-5" id="Catagorty">
+    <h2 class="text-center text-warning mb-4">Our Product Categories</h2>
     <div class="row"  id="ViewCatagorty" runat="server">
         <!-- Smart watch-->
         <div class="col-md-4 mb-4">
@@ -66,7 +67,6 @@
                 <div class="ad-content">
                      <h3 class="text-warning">Smart Watches</h3>
                      <p class="text-description">Discover the latest smartwatches with advanced features and connectivity options.</p>
-                    <a href="#" class="btn btn-success">Explore </a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,6 @@
                 <div class="ad-content">
                     <h3 class="text-warning">Rolex</h3>
                      <p class="text-description">Explore our collection of premium Rolex watches known for their luxury and precision.</p>
-                     <a href="#" class="btn btn-success">Explore</a>
                 </div>
             </div>
         </div>
@@ -92,8 +91,7 @@
          <img src="img/Om.jpg" class="card-img-top img-fluid" alt="Watches">
           <div class="card-body ad-content">
            <h3 class="text-warning">Omega</h3>
-           <p class="text-description">Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>
-         <a href="#" class="btn btn-success">Explore</a>
+           <p class="text-description">Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>    
     </div>
   </div>
 </div>
@@ -146,17 +144,36 @@
 </div>
 
 
+
+
+
  <hr  class="text-success"/>
 
 
 <!-- All Watches Section -->
-<div class="all-watches-section container mt-5"  >
+<div class="all-watches-section container mt-5"  id="Products" >
     <h2 class="text-center text-warning mb-4">Products</h2> 
+
+
+    
+     <!-- Button Group for Categories -->
+    <div class="d-flex justify-content-center mb-4">
+        <div class="btn-group" role="group" aria-label="Product Categories">
+          <asp:Button ID="btnAll" runat="server" CssClass="btn btn-success" Text="All" OnClick="btnAll_Click" />
+            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Smart Watches" OnClick="btnSmartWatches_Click" />
+            <asp:Button ID="Button2" runat="server" CssClass="btn btn-success" Text="Rolex" OnClick="btnRolex_Click" />
+            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success" Text="Omega" OnClick="btnOmega_Click" />
+        </div>
+    </div>
     
     <div class="row" id="AllProducts" runat="server">
         
     </div>
 </div>
+
+
+
+<hr class="text-success"/>
 
 
 </asp:Content>

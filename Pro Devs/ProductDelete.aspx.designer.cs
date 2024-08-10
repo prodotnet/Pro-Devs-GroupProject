@@ -11,61 +11,61 @@ namespace Pro_Devs
 {
 
 
-    public partial class Home
+    public partial class ProductDelete
     {
 
         /// <summary>
-        /// ViewCatagorty control.
+        /// pnlDeleteProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewCatagorty;
+        protected global::System.Web.UI.WebControls.Panel pnlDeleteProduct;
 
         /// <summary>
-        /// btnAll control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAll;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// Button1 control.
+        /// lblErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
 
         /// <summary>
-        /// Button2 control.
+        /// lblProductId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label lblProductId;
 
         /// <summary>
-        /// Button3 control.
+        /// txtProductId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.TextBox txtProductId;
 
         /// <summary>
-        /// AllProducts control.
+        /// btnDeleteProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AllProducts;
+        protected global::System.Web.UI.WebControls.Button btnDeleteProduct;
     }
 }

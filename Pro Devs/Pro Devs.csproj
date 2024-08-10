@@ -84,6 +84,10 @@
     <Content Include="Css\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="js\Script.js" />
+    <Content Include="ProductAddition.aspx" />
+    <Content Include="ProductDelete.aspx" />
+    <Content Include="ProductEdit.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="Web.config" />
@@ -124,6 +128,27 @@
     </Compile>
     <Compile Include="ProDevs.Master.designer.cs">
       <DependentUpon>ProDevs.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ProductAddition.aspx.cs">
+      <DependentUpon>ProductAddition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductAddition.aspx.designer.cs">
+      <DependentUpon>ProductAddition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDelete.aspx.cs">
+      <DependentUpon>ProductDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDelete.aspx.designer.cs">
+      <DependentUpon>ProductDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEdit.aspx.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductEdit.aspx.designer.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secrecy.cs" />
