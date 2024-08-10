@@ -10,6 +10,10 @@ namespace Pro_Devs
 {
     public partial class Home : System.Web.UI.Page
     {
+
+
+        ServiceClient SC = new ServiceClient();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,11 +25,11 @@ namespace Pro_Devs
 
         }
 
-       
-        //The method to get the products from the database
+
+        //The method  that dynamically  get  products from the database
         private void GetProducts()
         {
-            ServiceClient SC = new ServiceClient();
+           
 
             string Display = "";
 
@@ -36,7 +40,7 @@ namespace Pro_Devs
                 foreach (Product p in Products)
                 {
                     Display += "<div class='col-md-4 mb-4'>";
-                    Display += " <div class='watch-card text-center'>";
+                    Display += "<div class='watch-card text-center'>";
                     Display += "<img src=" + p.ImageUrl_ + " class='img-fluid' + alt='Smart Watch 1'>";
                     Display += "<div class='watch-content'>";
                     Display += "<h5 class='text-success'>" + p.Name + "</h5>";
@@ -59,7 +63,7 @@ namespace Pro_Devs
         //The method to get the products from the database and sort them according to thier catagory
         private void ShowProducts(string category)
         {
-            ServiceClient SC = new ServiceClient();
+           
             var products = SC.GetProductsByCategory(category);
 
             if (products != null)
@@ -69,7 +73,7 @@ namespace Pro_Devs
                 foreach (Product p in products)
                 {
                     Display += "<div class='col-md-4 mb-4'>";
-                    Display += " <div class='watch-card text-center'>";
+                    Display += "<div class='watch-card text-center'>";
                     Display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='Smart Watch'>";
                     Display += "<div class='watch-content'>";
                     Display += "<h5 class='text-success'>" + p.Name + "</h5>";
@@ -84,27 +88,30 @@ namespace Pro_Devs
 
                 AllProducts.InnerHtml = Display;
 
-               
-                ClientScript.RegisterStartupScript(this.GetType(), "ScrollToSection", "scrollToSection();", true);
             }
         }
 
+
+        //This is the button to display all produts to the user
         protected void btnAll_Click(object sender, EventArgs e)
         {
             GetProducts();
         }
 
 
+        //This is the button to display all SmartWatches to the user
         protected void btnSmartWatches_Click(object sender, EventArgs e)
         {
             ShowProducts("Smart Watches");
         }
 
+        //This is the button to display all Rolex to the user
         protected void btnRolex_Click(object sender, EventArgs e)
         {
             ShowProducts("Rolex");
         }
 
+        //This is the button to display all Omega to the user
         protected void btnOmega_Click(object sender, EventArgs e)
         {
             ShowProducts("Omega");

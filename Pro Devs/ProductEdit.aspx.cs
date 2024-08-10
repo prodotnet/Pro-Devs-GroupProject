@@ -38,7 +38,7 @@ namespace Pro_Devs
                     txtDescription.Text = product.Description;
                     txtPrice.Text = product.Price.ToString("F2");
                     ddlCategory.SelectedValue = product.Category;
-                    txtImageUrl.Text = product.ImageUrl;
+                    txtImageUrl.Text = product.ImageUrl_;
                 }
                 else
                 {
@@ -84,6 +84,6 @@ namespace Pro_Devs
                     lblErrorMessage.Text = "An error occurred: " + ex.Message;
                 }
             }
-        }
+        
     }
 }

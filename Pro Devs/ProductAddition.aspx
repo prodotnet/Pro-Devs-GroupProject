@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="p-2"></div>
-
+     <div class="p-2"></div>
     <div class="container mt-5">
         <h2 class="text-center text-warning mb-4">Add New Product</h2>
 
@@ -12,7 +12,7 @@
                 <asp:Label ID="lblMessage" runat="server" CssClass="text-success"></asp:Label>
                 <asp:Label ID="lblErrorMessage" runat="server" CssClass="text-danger"></asp:Label>
 
-                <asp:Form runat="server">
+                <asp:Form >
                     <div class="form-group">
                         <asp:Label ID="lblName" runat="server" AssociatedControlID="txtName" Text="Product Name:" CssClass="form-label"></asp:Label>
                         <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>

@@ -58,7 +58,7 @@
 
 <!-- Categories Section -->
 <div class="ad-section container mt-5" id="Catagorty">
-    <h2 class="text-center text-warning mb-4">Our Product Categories</h2>
+    <h3 class="text-center text-warning mb-4">Our Product Categories</h3>
     <div class="row"  id="ViewCatagorty" runat="server">
         <!-- Smart watch-->
         <div class="col-md-4 mb-4">
@@ -149,29 +149,34 @@
 
  <hr  class="text-success"/>
 
+<asp:ScriptManager ID="ScriptManager1" runat="server" />
 
 <!-- All Watches Section -->
-<div class="all-watches-section container mt-5"  id="Products" >
+<div class="all-watches-section container mt-5" id="Products">
     <h2 class="text-center text-warning mb-4">Products</h2> 
 
+    <!-- UpdatePanel  To avoid the page refreshing when clicking the category buttons  -->
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <!-- Button Group for Categories -->
+            <div class="d-flex justify-content-center mb-4">
+                <div class="btn-group" role="group" aria-label="Product Categories">
+                    <asp:Button ID="btnAll" runat="server" CssClass="btn btn-success" Text="All" OnClick="btnAll_Click" />
+                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Smart Watches" OnClick="btnSmartWatches_Click" />
+                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-success" Text="Rolex" OnClick="btnRolex_Click" />
+                    <asp:Button ID="Button3" runat="server" CssClass="btn btn-success" Text="Omega" OnClick="btnOmega_Click" />
+                </div>
+            </div>
+            
+            <!-- Product Display Section -->
+            <div class="row" id="AllProducts" runat="server">
+                <!-- Product items will be dynamically loaded here -->
 
-    
-     <!-- Button Group for Categories -->
-    <div class="d-flex justify-content-center mb-4">
-        <div class="btn-group" role="group" aria-label="Product Categories">
-          <asp:Button ID="btnAll" runat="server" CssClass="btn btn-success" Text="All" OnClick="btnAll_Click" />
-            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Smart Watches" OnClick="btnSmartWatches_Click" />
-            <asp:Button ID="Button2" runat="server" CssClass="btn btn-success" Text="Rolex" OnClick="btnRolex_Click" />
-            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success" Text="Omega" OnClick="btnOmega_Click" />
-        </div>
-    </div>
-    
-    <div class="row" id="AllProducts" runat="server">
-        
-    </div>
+
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </div>
-
-
 
 <hr class="text-success"/>
 

@@ -27,7 +27,8 @@ namespace Pro_Devs
 
                     if (result)
                     {
-                        lblMessage.Text = "Product deleted successfully!";
+                       
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Product deleted successfully')", true);
                     }
                     else
                     {

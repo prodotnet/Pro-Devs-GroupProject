@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="p-2"></div>
     <div class="container mt-5">
-        <h2 class="text-center text-danger mb-4">Delete Product</h2>
+        <h2 class="text-center text-warning mb-4">Delete Product</h2>
 
         
         <asp:Panel ID="pnlDeleteProduct" runat="server" CssClass="card p-4">
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="form-group">
-                        <asp:Button ID="btnDeleteProduct" runat="server" CssClass="btn btn-danger" Text="Delete Product" OnClick="btnDeleteProduct_Click" />
+                        <asp:Button ID="btnDeleteProduct" runat="server" CssClass="btn btn-success" Text="Delete Product" OnClick="btnDeleteProduct_Click" />
                     </div>
                 </form>
             </div>

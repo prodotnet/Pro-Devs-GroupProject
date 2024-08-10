@@ -33,11 +33,18 @@
                             <a class="nav-link text-success "  id="homeLink" href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success" href="#">Men</a>
+                            <a class="nav-link text-success" href="#">Blog</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-success" href="#">Women</a>
-                        </li>
+                         <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="ProductAddition.aspx">Add Product</a></li>
+                            <li><a class="dropdown-item" href="ProductEdit.aspx">Edit Product</a></li>
+                            <li><a class="dropdown-item" href="ProductDelete.aspx">Delete Product</a></li>
+                        </ul>
+                      </li>
                         <li class="nav-item">
                             <a class="nav-link text-success" href="About.aspx">About Us</a>
                         </li>

@@ -25,19 +25,19 @@ namespace Pro_Devs
                 // Create a new product object
                 Product addProduct = new Product
                 {
-                    Name = txtName.Text.Trim(),
-                    Description = txtDescription.Text.Trim(),
-                    Price = decimal.Parse(txtPrice.Text.Trim()),
+                    Name = txtName.Text,
+                    Description = txtDescription.Text,
+                    Price = Convert.ToDecimal(txtPrice.Text),
                     Category = ddlCategory.SelectedValue,
-                    ImageUrl_ = txtImageUrl.Text.Trim()
+                     ImageUrl_ = fileUploadImage.FileName
                 };
 
                 bool result = SC.AddProduct(addProduct);
 
                 if (result)
                 {
-                    lblMessage.Text = "Product added successfully!";
-                    lblErrorMessage.Text = "";
+                    
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Product added successfully')", true);
                 }
                 else
                 {
