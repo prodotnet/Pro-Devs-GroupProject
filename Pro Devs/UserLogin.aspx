@@ -10,7 +10,7 @@
         <div class="col-12 col-md-6 text-bg-success">
           <div class="d-flex align-items-center justify-content-center h-100">
             <div class="col-10 col-xl-7 py-2">
-              <img class="img-fluid rounded mb-3" loading="lazy" src="img/rolex2.jpg" width="245" height="80" alt="BootstrapBrain Logo">
+              <img class="img-fluid rounded mb-3" loading="lazy" src="img/account.jpg" width="245" height="80" alt="BootstrapBrain Logo">
               <hr class="border-primary-subtle mb-3">
                 <h2 class="h3 mb-3">Experience Luxury with Our Exclusive Watches</h2>
                 <p class="lead mb-4">Login to explore our exclusive collection and find the perfect watch for you.</p>

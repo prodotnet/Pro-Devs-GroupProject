@@ -11,7 +11,7 @@
           <div class="text-center">
             <h2 class="h3 mb-3">Register for Exclusive Access</h2>
             <p class="lead mb-4">Sign up to join our community and explore our premium collections.</p>
-            <img class="img-fluid rounded mb-3" loading="lazy" src="img/rolex2.jpg" width="300" height="100" alt="Luxury Watch">
+            <img class="img-fluid rounded mb-3" loading="lazy" src="img/account.jpg" width="300" height="100" alt="Luxury Watch">
           </div>
         </div>
         <div class="col-12 col-md-6">

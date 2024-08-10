@@ -167,6 +167,8 @@
                     <asp:Button ID="Button3" runat="server" CssClass="btn btn-success" Text="Omega" OnClick="btnOmega_Click" />
                 </div>
             </div>
+
+            
             
             <!-- Product Display Section -->
             <div class="row" id="AllProducts" runat="server">

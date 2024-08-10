@@ -20,8 +20,9 @@ namespace Pro_Devs
 
         protected void btnAddProduct_Click(object sender, EventArgs e)
         {
-            try
-            {
+
+               string urlas = "img/";
+            
                 // Create a new product object
                 Product addProduct = new Product
                 {
@@ -29,10 +30,15 @@ namespace Pro_Devs
                     Description = txtDescription.Text,
                     Price = Convert.ToDecimal(txtPrice.Text),
                     Category = ddlCategory.SelectedValue,
-                     ImageUrl_ = fileUploadImage.FileName
+                    ImageUrl_ = urlas+fileUploadImage.FileName
                 };
 
                 bool result = SC.AddProduct(addProduct);
+
+             try
+             {
+
+
 
                 if (result)
                 {
@@ -44,12 +50,12 @@ namespace Pro_Devs
                     lblMessage.Text = "";
                     lblErrorMessage.Text = "Failed to add the product. Please try again.";
                 }
-            }
-            catch (Exception ex)
-            {
+             }
+             catch (Exception ex)
+             {
                 lblMessage.Text = "";
                 lblErrorMessage.Text = "An error occurred: " + ex.Message;
-            }
+             }
         }
     }
 }

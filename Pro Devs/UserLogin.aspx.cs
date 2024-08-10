@@ -35,7 +35,7 @@ namespace Pro_Devs
 
             if (id != 0)
             {
-                Session["Logged in"] = id;
+                Session["UserId"] = id;
                 Response.Redirect("Home.aspx");
             }
             else
