@@ -24,6 +24,15 @@ namespace Pro_Devs
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
+        /// FAQ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor FAQ;
+
+        /// <summary>
         /// ProductMange control.
         /// </summary>
         /// <remarks>
@@ -40,15 +49,6 @@ namespace Pro_Devs
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor Login;
-
-        /// <summary>
-        /// Logout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Logout;
 
         /// <summary>
         /// form1 control.
