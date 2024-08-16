@@ -207,3 +207,44 @@ hr{
 label {
     font-weight: bold;
 }
+
+
+.shopping {
+    display: flex;
+    align-items: center;
+}
+
+    .shopping img {
+        width: 24px;
+        height: 24px;
+    }
+
+.quantity {
+    margin-left: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .item img {
+        width: 100px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .item .title {
+        flex: 1;
+    }
+
+.card {
+    margin-top: 20px;
+}
+
+.checkOut {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

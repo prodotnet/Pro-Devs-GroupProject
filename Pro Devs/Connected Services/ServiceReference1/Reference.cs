@@ -812,6 +812,12 @@ namespace Pro_Devs.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProductsByCategory", ReplyAction="http://tempuri.org/IService/GetProductsByCategoryResponse")]
         System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByCategoryAsync(string category);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProductsByPriceRange", ReplyAction="http://tempuri.org/IService/GetProductsByPriceRangeResponse")]
+        Pro_Devs.ServiceReference1.Product[] GetProductsByPriceRange(decimal minPrice, decimal maxPrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProductsByPriceRange", ReplyAction="http://tempuri.org/IService/GetProductsByPriceRangeResponse")]
+        System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByPriceRangeAsync(decimal minPrice, decimal maxPrice);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteProduct", ReplyAction="http://tempuri.org/IService/DeleteProductResponse")]
         bool DeleteProduct(int id);
         
@@ -930,6 +936,14 @@ namespace Pro_Devs.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByCategoryAsync(string category) {
             return base.Channel.GetProductsByCategoryAsync(category);
+        }
+        
+        public Pro_Devs.ServiceReference1.Product[] GetProductsByPriceRange(decimal minPrice, decimal maxPrice) {
+            return base.Channel.GetProductsByPriceRange(minPrice, maxPrice);
+        }
+        
+        public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByPriceRangeAsync(decimal minPrice, decimal maxPrice) {
+            return base.Channel.GetProductsByPriceRangeAsync(minPrice, maxPrice);
         }
         
         public bool DeleteProduct(int id) {

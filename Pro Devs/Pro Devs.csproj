@@ -72,13 +72,13 @@
     <Content Include="About.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
-    <Content Include="Connected Services\ServiceReference1\Pro_Devs.ServiceReference1.Product.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiceReference1\Pro_Devs.ServiceReference1.CartItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\Pro_Devs.ServiceReference1.Invoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\Pro_Devs.ServiceReference1.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\Service.disco" />

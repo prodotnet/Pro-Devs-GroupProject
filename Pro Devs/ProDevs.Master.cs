@@ -25,14 +25,14 @@ namespace Pro_Devs
                 {
                     // User is not logged in
                     Login.Visible = true;
-                    FAQ.Visible = true;
+                    Logout.Visible = false;
                     ProductMange.Visible = false;
                 }
                 else
                 {
                     // User is logged in
-                    Login.Visible = false;
-                    FAQ.Visible = false;
+                    Login.Visible = false;                  
+                    Logout.Visible = true;
                     ProductMange.Visible = true;
                 }
             }
@@ -40,7 +40,7 @@ namespace Pro_Devs
             {
                 // Session is not available
                 Login.Visible = true;
-                FAQ.Visible = true;
+                Logout.Visible = false;
                 ProductMange.Visible = false;
             }
         }
@@ -53,7 +53,7 @@ namespace Pro_Devs
             Session.Abandon();
 
           
-            Response.Redirect("UserLogin.aspx");
+            Response.Redirect("Home.aspx");
         }
 
     }
