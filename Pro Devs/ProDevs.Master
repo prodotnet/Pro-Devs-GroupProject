@@ -20,7 +20,8 @@
             <div class="container-fluid">
                 
                 <a class="navbar-brand text-success" href="#">
-                <img src="img/logo/Prodevs.png" alt="Prodevs Logo" style="max-height: 40px;">
+                <img src="img/logo/Prodevs.png" alt="Prodevs Logo" id="imgId" Visible ="true" runat="server" style="max-height: 40px;">
+                     <span id="welcomeMessage" runat="server" class="text-success" style="font-size: 20px;"></span>
                </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -45,8 +46,8 @@
                          <li class="nav-item">
                            <a  class="nav-link text-success"   href="FAQ.aspx">FAQ</a>
                         </li>
-                          <li class="nav-item dropdown"  runat="server"  id="ProductMange">
-                        <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" visible="true">
+                          <li class="nav-item dropdown"  runat="server"  id="ProductMange" Visible = "false">
+                        <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                             Products
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -63,9 +64,9 @@
                     </li>
                    
                        <li class="nav-item position-relative">
-                         <a class="nav-link text-success" href="#">
+                         <a class="nav-link text-success" href="Cart.aspx">
                           <i class="fa-solid fa-cart-shopping"></i>
-                         <span id="cart-count" class="badge bg-warning position-absolute top-0 start-100 translate-middle">0</span>
+                         <span id="cartCount" runat="server" class="badge bg-warning position-absolute top-0 start-100 translate-middle">0</span>
                       </a>
                     </li>
 
@@ -75,7 +76,7 @@
 
                    <li class="nav-item">
                          <a id="Login"  runat="server" class="nav-link text-success" href="UserLogin.aspx">Login</a> 
-                       <asp:LinkButton ID="Logout" runat="server" class="nav-link text-success" onClick="Logout_Click">Logout</asp:LinkButton>
+                       <asp:LinkButton ID="Logout" runat="server" class="nav-link text-success" onClick="Logout_Click" Visible = "false">Logout</asp:LinkButton>
                        
                    </li>
                       

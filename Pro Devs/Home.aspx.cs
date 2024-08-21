@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.MobileControls;
 using System.Web.UI.WebControls;
 
 namespace Pro_Devs
@@ -22,7 +23,8 @@ namespace Pro_Devs
                GetProducts();
             }
 
-
+            
+            
         }
 
 
@@ -39,6 +41,9 @@ namespace Pro_Devs
             {
                 foreach (Product p in Products)
                 {
+
+                  
+
                     Display += "<div class='col-md-4 mb-4'>";
                     Display += "<div class='watch-card text-center'>";
                     Display += "<img src=" + p.ImageUrl_ + " class='img-fluid' + alt='Smart Watch 1'>";
@@ -73,6 +78,9 @@ namespace Pro_Devs
 
                     foreach (Product p in products)
                     {
+                        // Create a unique ID for each button to identify the product
+                        
+
                         Display += "<div class='col-md-4 mb-4'>";
                         Display += "<div class='watch-card text-center'>";
                         Display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='Smart Watch'>";
@@ -86,8 +94,8 @@ namespace Pro_Devs
                         Display += "</div>";
                         Display += "</div>";
                     }
-
-                    AllProducts.InnerHtml = Display;
+                   
+                             AllProducts.InnerHtml = Display;
                 }
                 else
                 {
@@ -118,6 +126,9 @@ namespace Pro_Devs
 
                     foreach (Product p in products)
                     {
+                       
+                       
+
                         Display += "<div class='col-md-4 mb-4'>";
                         Display += "<div class='watch-card text-center'>";
                         Display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='Smart Watch'>";
@@ -131,8 +142,9 @@ namespace Pro_Devs
                         Display += "</div>";
                         Display += "</div>";
                     }
+                    
 
-                    AllProducts.InnerHtml = Display;
+                               AllProducts.InnerHtml = Display;
                 }
                 else
                 {
@@ -145,8 +157,6 @@ namespace Pro_Devs
                 AllProducts.InnerHtml = "<p class='text-danger'>Sorry, an error occurred while loading products.</p>";
             }
         }
-
-
 
 
 
@@ -186,21 +196,6 @@ namespace Pro_Devs
             ShowProductsByPriceRange(minPrice, maxPrice);
         }
 
-
-
-
-        protected void AddToCart(int productId)
-        {
-
-            var product = SC.GetProduct(productId);
-
-            if (product != null)
-            {
-
-                int userId = Convert.ToInt32(Session["UserId"]);
-                SC.AddToCart(userId, productId, 1);
-            }
-        }
 
     }
 }

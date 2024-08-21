@@ -1,8 +1,6 @@
 ﻿using Pro_Devs.ServiceReference1;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -10,100 +8,56 @@ namespace Pro_Devs
 {
     public partial class Cart : System.Web.UI.Page
     {
-        ServiceClient SC = new ServiceClient();
+         ServiceClient SC = new ServiceClient();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["Id"] != null)
+
+            if (Session["UserId"] == null)
             {
-                int productId;
-                if (int.TryParse(Request.QueryString["Id"], out productId))
-                {
-                    AddToCart(productId);
-                }
-                else
-                {
-                    Response.Write("Invalid product ID.");
-                }
+                Response.Redirect("UserLogin.aspx");
+                return;
             }
+
+
+            string Display = "";
 
             if (!IsPostBack)
             {
-                LoadCartItems();
-            }
-        }
 
-        private void AddToCart(int productId)
-        {
-            int userId;
-            if (int.TryParse(Session["UserId"]?.ToString(), out userId))
-            {
-               
-                bool result = SC.AddToCart(userId, productId, 1);
-
-                if (!result)
-                {
-                    // Display error message if adding to cart fails
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Failed to add the product to the cart')", true);
-                }
-                else
-                {
-                    // Redirect to refresh the cart page
-                    Response.Redirect("Cart.aspx");
-                }
-            }
-            else
-            {
-                // Redirect to login page if user is not logged in
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Please login ')", true);
-                Response.Redirect("UserLogin.aspx");
-            }
-        }
-
-        private void LoadCartItems()
-        {
-            int userId;
-            if (int.TryParse(Session["UserId"]?.ToString(), out userId))
-            {
-                try
-                {
-                    // Fetch cart items using the WCF service
-                    CartItem[] cartItemsArray = SC.GetCartItems(userId);
-
-                    // Convert the array to a List
-                    List<CartItem> cartItems = new List<CartItem>(cartItemsArray);
-
-                 
-                    var cartItemsWithProducts = cartItems.Select(item =>
-                    {
-                        Product product = SC.GetProduct(item.ProductId);
-                        return new
-                        {
-                            ImageUrl_ = product?.ImageUrl_,
-                            Name = product?.Name,
-                            Quantity = item.Quantity,
-                            Price = product?.Price,
-                            Total = (product?.Price ?? 0) * item.Quantity
-                        };
-                    }).ToList();
+               if (Request.QueryString["Id"] != null)
+               {
 
 
-                    ProductsRepeater.DataSource = cartItemsWithProducts;
-                    ProductsRepeater.DataBind();
-                }
-                catch (Exception ex)
-                {
-                   
-                    string errorMessage = "An error occurred while loading cart items.";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", $"alert('{errorMessage}');", true);
-                }
-            }
-            else
-            {
-                
-                string alertMessage = "User not logged in.";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", $"alert('{alertMessage}');", true);
-                Response.Redirect("UserLogin.aspx");
+                 int prodID = Convert.ToInt32(Request.QueryString["Id"]);
+
+
+
+                   var product = SC.GetProduct(prodID);
+
+
+                   if (product != null)
+                   {
+                        Display += "<tr class='text-success'>";
+                        Display += "<td><img src='" + product.ImageUrl_ + "' alt='" + product.Name + "' style='width:100px;height:auto;' /></td>";
+                        Display += "<td>" + product.Name + "</td>";
+                        Display += "<td>" + product.Price + "</td>";
+                        Display += "<td>";
+                        Display += "<button type='button' onclick='changeQuantity(-1, " + product.Id + ")' class='btn btn-warning btn-sm'>-</button>";
+                        Display += "<span id='quantity_" + prodID + "' style='margin:0 10px;'>1</span>";
+                        Display += "<button type='button' onclick='changeQuantity(1, " + product.Id + ")' class='btn btn-success btn-sm'>+</button>";
+                        Display += "</td>";
+                        Display += "<td><a href='#' class='btn btn-danger btn-sm'>Remove</a></td>";
+                        Display += "</tr>";
+
+
+                        ShoppingCart.InnerHtml = Display;
+
+                    }
+
+               }
+           
+
             }
         }
 

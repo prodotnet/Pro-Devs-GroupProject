@@ -189,7 +189,7 @@
 
    
             
-            <!-- Product Display Section -->
+            
             <div class="row" id="AllProducts" runat="server">
                 <!-- Product items will be dynamically loaded here -->
             </div>

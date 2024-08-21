@@ -29,13 +29,17 @@ namespace Pro_Devs
 
             string hashedPassword = Secrecy.HashPassword(Password);
 
-            int id = SC.Login(Email, hashedPassword);
+           var userlogin = SC.Login(Email, hashedPassword);
 
 
 
-            if (id != 0)
+            if (userlogin != null)
             {
-                Session["UserId"] = id;
+                Session["UserId"] = userlogin.Id;
+                Session["Name"] = userlogin.FirstName;
+                Session["Surname"] = userlogin.LastName;
+                Session["Email"] = userlogin.Email;
+
                 Response.Redirect("Home.aspx");
             }
             else

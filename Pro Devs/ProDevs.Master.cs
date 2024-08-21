@@ -19,43 +19,53 @@ namespace Pro_Devs
             // Ensure the session value is valid
             if (Session["UserId"] != null)
             {
-                int ID = Convert.ToInt32(Session["UserId"]);
+                int userId = Convert.ToInt32(Session["UserId"]);
+                string firstName = Session["Name"]?.ToString();
+                string lastName = Session["Surname"]?.ToString();
 
-                if (ID == 0)
-                {
-                    // User is not logged in
-                    Login.Visible = true;
-                    Logout.Visible = false;
-                    ProductMange.Visible = false;
-                }
-                else
-                {
-                    // User is logged in
-                    Login.Visible = false;                  
-                    Logout.Visible = true;
-                    ProductMange.Visible = true;
-                }
+                welcomeMessage.InnerHtml = $"Welcome back, <span class='text-warning' style='font-size: 20px;'>{firstName}</span> <span class='text-warning' style='font-size: 20px;'>{lastName}</span>";
+
+
+
+                Login.Visible = false;
+                imgId.Visible = false;
+                Logout.Visible = true;
+                ProductMange.Visible = true;
+
+
+                // Update cart count
+                UpdateCartCount(userId);
+
             }
-            else
-            {
-                // Session is not available
-                Login.Visible = true;
-                Logout.Visible = false;
-                ProductMange.Visible = false;
-            }
+
         }
 
 
         protected void Logout_Click(object sender, EventArgs e)
         {
-            
+
             Session.Clear();
             Session.Abandon();
 
-          
+
             Response.Redirect("Home.aspx");
         }
 
+
+
+        private void UpdateCartCount(int userId)
+        {
+            try
+            {
+                int cartItemCount = SC.GetCartItemCount(userId); // Assuming this method exists in your service client
+                cartCount.InnerText = cartItemCount.ToString();
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (e.g., log the error)
+                cartCount.InnerText = "0"; // Default to 0 if there's an issue
+            }
+        }
     }
-    
+
 }
