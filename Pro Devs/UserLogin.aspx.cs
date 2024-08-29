@@ -39,6 +39,7 @@ namespace Pro_Devs
                 Session["Name"] = userlogin.FirstName;
                 Session["Surname"] = userlogin.LastName;
                 Session["Email"] = userlogin.Email;
+                Session["UserType"] = userlogin.UserType;
 
                 Response.Redirect("Home.aspx");
             }

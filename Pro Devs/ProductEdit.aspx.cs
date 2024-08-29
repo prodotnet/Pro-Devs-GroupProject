@@ -67,8 +67,15 @@ namespace Pro_Devs
 
                         if (result)
                         {
-                            lblMessage.Text = "Product updated successfully!";
-                        }
+                        
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Product updated successfully')", true);
+                        //clearing the imput box
+                        txtName.Text = "";
+                        txtDescription.Text = "";
+                        txtPrice.Text = "";
+                        ddlCategory.SelectedValue = "";
+                        txtImageUrl.Text = "";
+                    }
                         else
                         {
                             lblErrorMessage.Text = "Failed to update the product. Please try again.";

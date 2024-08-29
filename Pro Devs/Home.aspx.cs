@@ -14,13 +14,15 @@ namespace Pro_Devs
 
 
         ServiceClient SC = new ServiceClient();
+        private bool Manager;
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
-               GetProducts();
+                Manager = Session["UserType"] != null && Session["UserType"].ToString() == "Manager";
+                GetProducts();
             }
 
             
@@ -42,20 +44,39 @@ namespace Pro_Devs
                 foreach (Product p in Products)
                 {
 
-                  
-
-                    Display += "<div class='col-md-4 mb-4'>";
-                    Display += "<div class='watch-card text-center'>";
-                    Display += "<img src=" + p.ImageUrl_ + " class='img-fluid' + alt='Smart Watch 1'>";
-                    Display += "<div class='watch-content'>";
-                    Display += "<h5 class='text-success'>" + p.Name + "</h5>";
-                    Display += "<p class='text-warning'> R" + p.Price + "</p>";
-                    Display += "<p class='text-warning'>★★★☆☆</p>";
-                    Display += "<p class='text-description'>" + p.Description + "</p>";
-                    Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
-                    Display += "</div>";
-                    Display += "</div>";
-                    Display += "</div>";
+  
+                    if (Manager)
+                    {
+                        
+                        Display += "<div class='col-md-4 mb-4'>";
+                        Display += "<div class='watch-card text-center'>";
+                        Display += "<img src=" + p.ImageUrl_ + " class='img-fluid' + alt='Smart Watch 1'>";
+                        Display += "<div class='watch-content'>";
+                        Display += "<h5 class='text-success'>" + p.Name + "</h5>";
+                        Display += "<p class='text-warning'> R" + p.Price + "</p>";
+                        Display += "<p class='text-warning'>★★★☆☆</p>";
+                        Display += "<p class='text-description'>" + p.Description + "</p>";
+                        Display += "<a href='ProductEdit.aspx?Id=" + p.Id + "' class='btn btn-success me-2' >Edit Product</a>";
+                        Display += "<a href='ProductDelete.aspx?Id=" + p.Id + "' class='btn btn-warning'>Delete Product</a>";
+                        Display += "</div>";
+                        Display += "</div>";
+                        Display += "</div>";
+                    }
+                    else
+                    {
+                        Display += "<div class='col-md-4 mb-4'>";
+                        Display += "<div class='watch-card text-center'>";
+                        Display += "<img src=" + p.ImageUrl_ + " class='img-fluid' + alt='Smart Watch 1'>";
+                        Display += "<div class='watch-content'>";
+                        Display += "<h5 class='text-success'>" + p.Name + "</h5>";
+                        Display += "<p class='text-warning'> R" + p.Price + "</p>";
+                        Display += "<p class='text-warning'>★★★☆☆</p>";
+                        Display += "<p class='text-description'>" + p.Description + "</p>";
+                        Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                        Display += "</div>";
+                        Display += "</div>";
+                        Display += "</div>";
+                    }
 
                 }
 
@@ -71,6 +92,7 @@ namespace Pro_Devs
             try
             {
                 var products = SC.GetProductsByCategory(category);
+                Manager = Session["UserType"] != null && Session["UserType"].ToString() == "Manager";
 
                 if (products != null && products.Any())
                 {
@@ -79,23 +101,42 @@ namespace Pro_Devs
                     foreach (Product p in products)
                     {
                         // Create a unique ID for each button to identify the product
-                        
 
-                        Display += "<div class='col-md-4 mb-4'>";
-                        Display += "<div class='watch-card text-center'>";
-                        Display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='Smart Watch'>";
-                        Display += "<div class='watch-content'>";
-                        Display += "<h5 class='text-success'>" + p.Name + "</h5>";
-                        Display += "<p class='text-warning'> R" + p.Price + "</p>";
-                        Display += "<p class='text-warning'>★★★☆☆</p>";
-                        Display += "<p class='text-description'>" + p.Description + "</p>";
-                        Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
-                        Display += "</div>";
-                        Display += "</div>";
-                        Display += "</div>";
+                        if (Manager)
+                        {
+                            Display += "<div class='col-md-4 mb-4'>";
+                            Display += "<div class='watch-card text-center'>";
+                            Display += "<img src=" + p.ImageUrl_ + " class='img-fluid' + alt='Smart Watch 1'>";
+                            Display += "<div class='watch-content'>";
+                            Display += "<h5 class='text-success'>" + p.Name + "</h5>";
+                            Display += "<p class='text-warning'> R" + p.Price + "</p>";
+                            Display += "<p class='text-warning'>★★★☆☆</p>";
+                            Display += "<p class='text-description'>" + p.Description + "</p>";
+                            Display += "<a href='ProductEdit.aspx?Id=" + p.Id + "' class='btn btn-success me-2' >Edit Product</a>";
+                            Display += "<a href='ProductDelete.aspx?Id=" + p.Id + "' class='btn btn-warning'>Delete Product</a>";
+                            Display += "</div>";
+                            Display += "</div>";
+                            Display += "</div>";
+                        }
+                        else
+                        {
+                            Display += "<div class='col-md-4 mb-4'>";
+                            Display += "<div class='watch-card text-center'>";
+                            Display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='Smart Watch'>";
+                            Display += "<div class='watch-content'>";
+                            Display += "<h5 class='text-success'>" + p.Name + "</h5>";
+                            Display += "<p class='text-warning'> R" + p.Price + "</p>";
+                            Display += "<p class='text-warning'>★★★☆☆</p>";
+                            Display += "<p class='text-description'>" + p.Description + "</p>";
+                            Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                            Display += "</div>";
+                            Display += "</div>";
+                            Display += "</div>";
+                        }
+                           
                     }
                    
-                             AllProducts.InnerHtml = Display;
+                    AllProducts.InnerHtml = Display;
                 }
                 else
                 {
@@ -119,6 +160,7 @@ namespace Pro_Devs
             try
             {
                 var products = SC.GetProductsByPriceRange(minPrice, maxPrice);
+                Manager = Session["UserType"] != null && Session["UserType"].ToString() == "Manager";
 
                 if (products != null && products.Any())
                 {
@@ -126,25 +168,43 @@ namespace Pro_Devs
 
                     foreach (Product p in products)
                     {
-                       
-                       
 
-                        Display += "<div class='col-md-4 mb-4'>";
-                        Display += "<div class='watch-card text-center'>";
-                        Display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='Smart Watch'>";
-                        Display += "<div class='watch-content'>";
-                        Display += "<h5 class='text-success'>" + p.Name + "</h5>";
-                        Display += "<p class='text-warning'> R" + p.Price + "</p>";
-                        Display += "<p class='text-warning'>★★★☆☆</p>";
-                        Display += "<p class='text-description'>" + p.Description + "</p>";
-                        Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
-                        Display += "</div>";
-                        Display += "</div>";
-                        Display += "</div>";
+
+                        if (Manager)
+                        {
+                            Display += "<div class='col-md-4 mb-4'>";
+                            Display += "<div class='watch-card text-center'>";
+                            Display += "<img src=" + p.ImageUrl_ + " class='img-fluid' + alt='Smart Watch 1'>";
+                            Display += "<div class='watch-content'>";
+                            Display += "<h5 class='text-success'>" + p.Name + "</h5>";
+                            Display += "<p class='text-warning'> R" + p.Price + "</p>";
+                            Display += "<p class='text-warning'>★★★☆☆</p>";
+                            Display += "<p class='text-description'>" + p.Description + "</p>";
+                            Display += "<a href='ProductEdit.aspx?Id=" + p.Id + "' class='btn btn-success me-2' >Edit Product</a>";
+                            Display += "<a href='ProductDelete.aspx?Id=" + p.Id + "' class='btn btn-warning'>Delete Product</a>";
+                            Display += "</div>";
+                            Display += "</div>";
+                            Display += "</div>";
+                        }
+                        else
+                        {
+                            Display += "<div class='col-md-4 mb-4'>";
+                            Display += "<div class='watch-card text-center'>";
+                            Display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='Smart Watch'>";
+                            Display += "<div class='watch-content'>";
+                            Display += "<h5 class='text-success'>" + p.Name + "</h5>";
+                            Display += "<p class='text-warning'> R" + p.Price + "</p>";
+                            Display += "<p class='text-warning'>★★★☆☆</p>";
+                            Display += "<p class='text-description'>" + p.Description + "</p>";
+                            Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                            Display += "</div>";
+                            Display += "</div>";
+                            Display += "</div>";
+                        }
                     }
                     
 
-                               AllProducts.InnerHtml = Display;
+                   AllProducts.InnerHtml = Display;
                 }
                 else
                 {

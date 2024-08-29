@@ -16,7 +16,11 @@
 <body style=" background-color: #222;">
      <form id="form1" runat="server">
      <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3 fixed-top">
+       
+  
+         
+         <!-----------------------------------------Manager login navigation--------------------------------------------------- -------------------------------------------------->
+         <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3 fixed-top"  id="Manager" runat="server" Visible = "false">
             <div class="container-fluid">
                 
                 <a class="navbar-brand text-success" href="#">
@@ -31,7 +35,54 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
                     <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link text-success "  id="homeLink" href="Home.aspx">Home</a>
+                            <a class="nav-link text-success "  id="homeLinkM" href="Home.aspx">Home</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-success "   href="#">Dashboard</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-success "   href="#">View Orders</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-success "   href="ProductAddition.aspx"> Add Products</a>
+                        </li>
+                        <li class="nav-item dropdown"  runat="server"  >
+                                              
+                      </li>
+                     
+                    </ul>
+                   <ul class="navbar-nav ms-auto">
+                 
+                 
+
+                   <li class="nav-item">
+                         <a id="LoginM"  runat="server" class="nav-link text-success" href="UserLogin.aspx">Login</a> 
+                       <asp:LinkButton ID="LogoutM" runat="server" class="nav-link text-success" onClick="Logout_Click" Visible = "false">Logout</asp:LinkButton>
+                       
+                   </li>
+                     
+              </ul>
+                </div>
+            </div>
+        </nav>
+
+          <!-----------------------------------------Customer login navigation--------------------------------------------------- ---->
+          <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3 fixed-top" id="customer" runat="server" Visible="false">
+            <div class="container-fluid">
+                
+                <a class="navbar-brand text-success" href="#">
+                <img src="img/logo/Prodevs.png" alt="Prodevs Logo" id="img1" Visible ="true" runat="server" style="max-height: 40px;">
+                     <span id="welcomeMessage1" runat="server" class="text-success" style="font-size: 20px;"></span>
+               </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-success "  id="homeLinkC" href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-success" href="Blog.aspx">Blog</a>
@@ -45,17 +96,7 @@
                         </li>
                          <li class="nav-item">
                            <a  class="nav-link text-success"   href="FAQ.aspx">FAQ</a>
-                        </li>
-                          <li class="nav-item dropdown"  runat="server"  id="ProductMange" Visible = "false">
-                        <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="ProductAddition.aspx">Add Product</a></li>
-                            <li><a class="dropdown-item" href="ProductEdit.aspx">Edit Product</a></li>
-                            <li><a class="dropdown-item" href="ProductDelete.aspx">Delete Product</a></li>
-                        </ul>
-                      </li>
+                        </li>                       
                      
                     </ul>
                    <ul class="navbar-nav ms-auto">
@@ -70,20 +111,86 @@
                       </a>
                     </li>
 
+                  
+
+                   <li class="nav-item">
+                         <a id="LoginC"  runat="server" class="nav-link text-success" href="UserLogin.aspx">Login</a> 
+                        <asp:LinkButton ID="LogoutC" runat="server" class="nav-link text-success" onClick="Logout_Click" Visible = "false">Logout</asp:LinkButton>
+                       
+                   </li>
+                      
+                 
+              </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!-----------------------------------------Not login user--------------------------------------------------- ---->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-dark border-bottom box-shadow mb-3 fixed-top" id="Nonlogged" runat="server"  Visible="true">
+            <div class="container-fluid">
+                
+                <a class="navbar-brand text-success" href="#">
+                <img src="img/logo/Prodevs.png" alt="Prodevs Logo" id="img2" Visible ="true" runat="server" style="max-height: 40px;">
+                     <span id="Span3" runat="server" class="text-success" style="font-size: 20px;"></span>
+               </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-success " href="Home.aspx">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="Blog.aspx">Blog</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="About.aspx">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="Contact.aspx">Contact</a>
+                        </li>
+                         <li class="nav-item">
+                           <a  class="nav-link text-success"   href="FAQ.aspx">FAQ</a>
+                        </li>
+                       
+                     
+                    </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                      <a class="nav-link text-success" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                   
+                       <li class="nav-item position-relative">
+                         <a class="nav-link text-success" href="Cart.aspx">
+                          <i class="fa-solid fa-cart-shopping"></i>
+                         <span id="Span4" runat="server" class="badge bg-warning position-absolute top-0 start-100 translate-middle">0</span>
+                      </a>
+                    </li>
+
                    <li class="nav-item">
                      
                     </li>
 
                    <li class="nav-item">
-                         <a id="Login"  runat="server" class="nav-link text-success" href="UserLogin.aspx">Login</a> 
-                       <asp:LinkButton ID="Logout" runat="server" class="nav-link text-success" onClick="Logout_Click" Visible = "false">Logout</asp:LinkButton>
+                         <a id="A2"  runat="server" class="nav-link text-success" href="UserLogin.aspx">Login</a> 
+                      
                        
                    </li>
+
+
                       
               </ul>
                 </div>
             </div>
         </nav>
+
+
     </header>
 
    
@@ -169,3 +276,4 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>  
 </body>
 </html>
+

@@ -17,24 +17,56 @@ namespace Pro_Devs
         protected void Page_Load(object sender, EventArgs e)
         {
             // Ensure the session value is valid
-            if (Session["UserId"] != null)
+            if (Session["UserId"] != null && Session["UserType"] != null)
             {
-                int userId = Convert.ToInt32(Session["UserId"]);
+
+                string userType = Session["UserType"].ToString();
                 string firstName = Session["Name"]?.ToString();
                 string lastName = Session["Surname"]?.ToString();
-
-                welcomeMessage.InnerHtml = $"Welcome back, <span class='text-warning' style='font-size: 20px;'>{firstName}</span> <span class='text-warning' style='font-size: 20px;'>{lastName}</span>";
-
+                int userId = Convert.ToInt32(Session["UserId"]);
 
 
-                Login.Visible = false;
-                imgId.Visible = false;
-                Logout.Visible = true;
-                ProductMange.Visible = true;
+                if (userType == "Manager")
+                {
+
+                    // Show the Manager navigation
+                    Manager.Visible = true;
+                    LogoutM.Visible = true;
+                    LoginM.Visible = false;
+                    customer.Visible = false;
+                    Nonlogged.Visible = false;
+                    imgId.Visible = false;
 
 
-                // Update cart count
-                UpdateCartCount(userId);
+
+
+                    welcomeMessage.InnerHtml = $"<span class='text-success' style='font-size: 20px;'>{userType}</span> <span class='text-warning' style='font-size: 18px;'>{firstName}</span> <span class='text-warning' style='font-size: 18px;'>{lastName}</span>";
+               
+                }
+                else if (userType == "Customer")
+                {
+
+                    // Show the Customer navigation
+                    customer.Visible = true;
+                    LogoutC.Visible = true;
+                    LoginC.Visible = false;
+                    Manager.Visible = false;
+                    Nonlogged.Visible = false;
+                    img1.Visible = false;
+
+                    // Update cart count
+                    UpdateCartCount(userId);
+                    welcomeMessage1.InnerHtml = $"<span class='text-success' style='font-size: 20px;'>{userType}</span> <span class='text-warning' style='font-size: 18px;'>{firstName}</span> <span class='text-warning' style='font-size: 18px;'>{lastName}</span>";
+                    
+                }
+                else
+                {
+                    // Show the Nonlogged navigation
+                    Nonlogged.Visible = true;
+                    Manager.Visible = false;
+                    customer.Visible = false;
+                }
+
 
             }
 

@@ -44,6 +44,8 @@ namespace Pro_Devs
                 {
                     
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Product added successfully')", true);
+                   
+
                 }
                 else
                 {

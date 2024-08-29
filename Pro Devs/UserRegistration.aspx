@@ -56,8 +56,8 @@
                   <label for="gender" class="form-label text-light">User Type <span class="text-danger">*</span></label>
                   <select class="form-select" name="UserType" id="type" runat="server">
                     <option value="" ></option>
-                    <option value="manager">Manager</option>
-                    <option value="customer">Customer</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Customer">Customer</option>
                    
                   </select>
                 </div>
