@@ -13,6 +13,12 @@
                 <asp:Label ID="lblErrorMessage" runat="server" CssClass="text-danger"></asp:Label>
 
                 <asp:Form >
+                   
+                    <div class="form-group">
+                        <asp:Label ID="lblImageUrl" runat="server" AssociatedControlID="fileUploadImage" Text="Image:" CssClass="form-label"></asp:Label>
+                        <asp:FileUpload ID="fileUploadImage" runat="server" CssClass="form-control" />
+                    </div>
+                    
                     <div class="form-group">
                         <asp:Label ID="lblName" runat="server" AssociatedControlID="txtName" Text="Product Name:" CssClass="form-label"></asp:Label>
                         <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
@@ -38,10 +44,7 @@
                         </asp:DropDownList>
                     </div>
 
-                    <div class="form-group">
-                        <asp:Label ID="lblImageUrl" runat="server" AssociatedControlID="fileUploadImage" Text="Image:" CssClass="form-label"></asp:Label>
-                        <asp:FileUpload ID="fileUploadImage" runat="server" CssClass="form-control" />
-                    </div>
+                   
 
                     <div class="form-group">
                         <asp:Button ID="btnAddProduct" runat="server" CssClass="btn btn-success" Text="Add Product" OnClick="btnAddProduct_Click" />

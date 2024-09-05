@@ -95,7 +95,7 @@
                             <a class="nav-link text-success" href="Contact.aspx">Contact</a>
                         </li>
                          <li class="nav-item">
-                           <a  class="nav-link text-success"   href="FAQ.aspx">FAQ</a>
+                           <a  class="nav-link text-success"   href="Checkout.aspx">Invoice</a>
                         </li>                       
                      
                     </ul>
@@ -249,17 +249,7 @@
                 </ul>
             </div>
 
-            <!-- Newsletter -->
-            <div class="col-md-3 mb-4">
-                <h5 class="text-uppercase text-warning">Newsletter</h5>
-                <form>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                    </div>
-                    <button type="submit" class="btn btn-success">Subscribe</button>
-                </form>
-            </div>
-        </div>
+            
 
         <!-- Copyright -->
         <div class="row mt-4">

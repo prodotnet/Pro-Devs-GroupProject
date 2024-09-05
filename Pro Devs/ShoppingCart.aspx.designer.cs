@@ -11,17 +11,17 @@ namespace Pro_Devs
 {
 
 
-    public partial class Cart
+    public partial class ShoppingCart
     {
 
         /// <summary>
-        /// ShoppingCart control.
+        /// Cart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ShoppingCart;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cart;
 
         /// <summary>
         /// TotalAmount control.

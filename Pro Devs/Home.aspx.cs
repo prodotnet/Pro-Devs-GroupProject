@@ -72,7 +72,7 @@ namespace Pro_Devs
                         Display += "<p class='text-warning'> R" + p.Price + "</p>";
                         Display += "<p class='text-warning'>★★★☆☆</p>";
                         Display += "<p class='text-description'>" + p.Description + "</p>";
-                        Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                        Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
                         Display += "</div>";
                         Display += "</div>";
                         Display += "</div>";
@@ -128,7 +128,7 @@ namespace Pro_Devs
                             Display += "<p class='text-warning'> R" + p.Price + "</p>";
                             Display += "<p class='text-warning'>★★★☆☆</p>";
                             Display += "<p class='text-description'>" + p.Description + "</p>";
-                            Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                            Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
                             Display += "</div>";
                             Display += "</div>";
                             Display += "</div>";
@@ -196,7 +196,7 @@ namespace Pro_Devs
                             Display += "<p class='text-warning'> R" + p.Price + "</p>";
                             Display += "<p class='text-warning'>★★★☆☆</p>";
                             Display += "<p class='text-description'>" + p.Description + "</p>";
-                            Display += "<a href='Cart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                            Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
                             Display += "</div>";
                             Display += "</div>";
                             Display += "</div>";

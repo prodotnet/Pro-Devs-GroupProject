@@ -44,7 +44,14 @@ namespace Pro_Devs
                 {
                     
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Product added successfully')", true);
-                   
+                    // Clear the input fields
+                    txtName.Text = "";
+                    txtDescription.Text = "";
+                    txtPrice.Text = "";
+                    ddlCategory.SelectedValue = "";
+                    fileUploadImage.Attributes.Clear(); 
+
+                 
 
                 }
                 else

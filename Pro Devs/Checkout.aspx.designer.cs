@@ -11,7 +11,7 @@ namespace Pro_Devs
 {
 
 
-    public partial class Cart
+    public partial class Checkout
     {
 
         /// <summary>

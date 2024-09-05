@@ -1,12 +1,13 @@
-﻿using Pro_Devs.ServiceReference1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
+using System.Web.UI.WebControls;
+using Pro_Devs.ServiceReference1;  
 
 namespace Pro_Devs
 {
-    public partial class Cart : System.Web.UI.Page
+    public partial class Checkout : System.Web.UI.Page
     {
         ServiceClient Client = new ServiceClient();
 

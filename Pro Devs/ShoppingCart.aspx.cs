@@ -1,14 +1,15 @@
 ﻿using Pro_Devs.ServiceReference1;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Pro_Devs
 {
-    public partial class Cart : System.Web.UI.Page
+    public partial class ShoppingCart : System.Web.UI.Page
     {
         ServiceClient Client = new ServiceClient();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,9 +21,23 @@ namespace Pro_Devs
 
             if (!IsPostBack)
             {
-                DisplayCart();
+                if (Request.QueryString["Id"] != null)
+                {
+                    // adding the a specific  product to the cart
+                    AddProductToCart();
+
+                    //   display all product in the shopping cart the product in the cart.
+                    DisplayCart();
+                }
             }
         }
+
+
+
+
+
+
+
 
         private void DisplayCart()
         {
@@ -31,7 +46,7 @@ namespace Pro_Devs
 
             if (cartItems == null || !cartItems.Any())
             {
-                ShoppingCart.InnerHtml = "<tr><td colspan='5' class='text-center text-warning'>Your cart is empty.</td></tr>";
+               Cart.InnerHtml = "<tr><td colspan='5' class='text-center text-warning'>Your cart is empty.</td></tr>";
                 TotalAmount.InnerText = "Total Amount: R0.00";
                 return;
             }
@@ -63,9 +78,11 @@ namespace Pro_Devs
                 display += $"</td>";
                 display += $"<td><a href='Checkout.aspx?removeId={item.ProductId}' class='btn btn-danger btn-sm'>Remove</a></td>";
                 display += "</tr>";
+
+               
             }
 
-            ShoppingCart.InnerHtml = display;
+            Cart.InnerHtml = display;
             TotalAmount.InnerText = $"Total Amount: R{totalAmount:F2}";
         }
 
@@ -106,20 +123,46 @@ namespace Pro_Devs
             }
         }
 
-        protected void btnCheckout_Click(object sender, EventArgs e)
-        {
-            var userId = Convert.ToInt32(Session["UserId"]);
-            var invoice = Client.Checkout(userId);
 
-            if (invoice != null)
+
+        private void AddProductToCart()
+        {
+            string Display = "";
+
+            int prodID = Convert.ToInt32(Request.QueryString["Id"]);
+            var product = Client.GetProduct(prodID);
+
+            if (product != null)
             {
-                Response.Redirect("OrderConfirmation.aspx");
-            }
-            else
-            {
-                lblError.Text = "An error occurred during checkout. Please try again.";
-                lblError.Visible = true;
+                Display += "<tr class='text-success'>";
+                Display += "<td><img src='" + product.ImageUrl_ + "' alt='" + product.Name + "' style='width:100px;height:auto;' /></td>";
+                Display += "<td>" + product.Name + "</td>";
+                Display += "<td>" + product.Price + "</td>";
+                Display += "<td>";
+               
+
+                // Add the product to the cart
+                int userId = Convert.ToInt32(Session["UserId"]);
+                int productId = Convert.ToInt32(Request.QueryString["Id"]);
+                int quantity = 1; 
+
+
+                bool isAdded = Client.AddToCart(userId, productId, quantity);
+
+                if (isAdded)
+                {
+                    Cart.InnerHtml = Display;
+                    lblError.Visible = false;
+                }
+                else
+                {
+                    lblError.Text = "Failed to add product to the cart.";
+                    lblError.Visible = true;
+                }
+
             }
         }
+
+
     }
 }
