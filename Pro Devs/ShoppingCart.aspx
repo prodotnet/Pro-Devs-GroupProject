@@ -6,7 +6,7 @@
      <div class="p-2"></div>
     <div class="p-2"></div>
     <div class="container mt-5">
-        <h4 class="text-center text-warning mb-4">Your Shopping Cart</h4>
+        <h4 class="text-center text-warning mb-4">Shopping Cart</h4>
         
         
        

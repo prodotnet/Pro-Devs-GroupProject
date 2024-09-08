@@ -73,7 +73,6 @@
     <Content Include="About.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Cart.aspx" />
-    <Content Include="Checkout.aspx" />
     <Content Include="Connected Services\ServiceReference1\Pro_Devs.ServiceReference1.CartItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -95,6 +94,7 @@
     </None>
     <Content Include="Contact.aspx" />
     <Content Include="Css\Style.css" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
@@ -129,13 +129,6 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Checkout.aspx.cs">
-      <DependentUpon>Checkout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Checkout.aspx.designer.cs">
-      <DependentUpon>Checkout.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +140,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>

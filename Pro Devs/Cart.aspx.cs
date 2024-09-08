@@ -26,47 +26,64 @@ namespace Pro_Devs
 
         private void DisplayCart()
         {
-            var userId = Convert.ToInt32(Session["UserId"]);
-            var cartItems = Client.GetCartItems(userId);
 
-            if (cartItems == null || !cartItems.Any())
+           
+
+                var userId = Convert.ToInt32(Session["UserId"]);
+                string display = "";
+                decimal totalAmount = 0;
+
+            try
             {
-                ShoppingCart.InnerHtml = "<tr><td colspan='5' class='text-center text-warning'>Your cart is empty.</td></tr>";
-                TotalAmount.InnerText = "Total Amount: R0.00";
+
+
+
+                var cartItems = Client.GetCartItems(userId);
+                if (cartItems == null || !cartItems.Any())
+                {
+                    ShoppingCart.InnerHtml = "<tr><td colspan='5' class='text-center text-warning'>Your cart is empty.</td></tr>";
+                    TotalAmount.InnerText = "Total Amount: R0.00";
+                    return;
+                }
+                else
+                {
+                    foreach (var item in cartItems)
+                    {
+                        totalAmount += item.Price * item.Quantity;
+                        display += "<tr class='text-success'>";
+                        display += $"<td><img src='{item.ImageUrl}' alt='{item.Name}' style='width:100px;height:auto;' /></td>";
+                        display += $"<td>{item.Name}</td>";
+                        display += $"<td>R{item.Price:F2}</td>";
+                        display += $"<td>";
+                        display += $"<form method='post' action='cart.aspx' style='display:inline;'>";
+                        display += $"<input type='hidden' name='action' value='update' />";
+                        display += $"<input type='hidden' name='productId' value='{item.ProductId}' />";
+                        display += $"<input type='hidden' name='quantity' value='{Math.Max(item.Quantity - 1, 0)}' />";
+                        display += $"<button type='submit' class='btn btn-warning btn-sm'>-</button>";
+                        display += $"</form>";
+                        display += $"<span style='margin:0 10px;'>{item.Quantity}</span>";
+                        display += $"<form method='post' action='cart.aspx' style='display:inline;'>";
+                        display += $"<input type='hidden' name='action' value='update' />";
+                        display += $"<input type='hidden' name='productId' value='{item.ProductId}' />";
+                        display += $"<input type='hidden' name='quantity' value='{item.Quantity + 1}' />";
+                        display += $"<button type='submit' class='btn btn-success btn-sm'>+</button>";
+                        display += $"</form>";
+                        display += $"</td>";
+                        display += $"<td><a href='Cart.aspx?removeId={item.ProductId}' class='btn btn-danger btn-sm'>Remove</a></td>";
+                        display += "</tr>";
+                    }
+
+                    ShoppingCart.InnerHtml = display;
+                    TotalAmount.InnerText = $"Total Amount: R{totalAmount:F2}";
+                }
+
+            }
+            catch (Exception ex)
+            {
                 return;
             }
 
-            string display = "";
-            decimal totalAmount = 0;
-
-            foreach (var item in cartItems)
-            {
-                totalAmount += item.Price * item.Quantity;
-                display += "<tr class='text-success'>";
-                display += $"<td><img src='{item.ImageUrl}' alt='{item.Name}' style='width:100px;height:auto;' /></td>";
-                display += $"<td>{item.Name}</td>";
-                display += $"<td>R{item.Price:F2}</td>";
-                display += $"<td>";
-                display += $"<form method='post' action='Checkout.aspx' style='display:inline;'>";
-                display += $"<input type='hidden' name='action' value='update' />";
-                display += $"<input type='hidden' name='productId' value='{item.ProductId}' />";
-                display += $"<input type='hidden' name='quantity' value='{Math.Max(item.Quantity - 1, 0)}' />";
-                display += $"<button type='submit' class='btn btn-warning btn-sm'>-</button>";
-                display += $"</form>";
-                display += $"<span style='margin:0 10px;'>{item.Quantity}</span>";
-                display += $"<form method='post' action='Checkout.aspx' style='display:inline;'>";
-                display += $"<input type='hidden' name='action' value='update' />";
-                display += $"<input type='hidden' name='productId' value='{item.ProductId}' />";
-                display += $"<input type='hidden' name='quantity' value='{item.Quantity + 1}' />";
-                display += $"<button type='submit' class='btn btn-success btn-sm'>+</button>";
-                display += $"</form>";
-                display += $"</td>";
-                display += $"<td><a href='Checkout.aspx?removeId={item.ProductId}' class='btn btn-danger btn-sm'>Remove</a></td>";
-                display += "</tr>";
-            }
-
-            ShoppingCart.InnerHtml = display;
-            TotalAmount.InnerText = $"Total Amount: R{totalAmount:F2}";
+            
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
@@ -75,7 +92,7 @@ namespace Pro_Devs
             {
                 int removeID = Convert.ToInt32(Request.QueryString["removeId"]);
                 RemoveFromCart(removeID);
-                Response.Redirect("Checkout.aspx");
+                Response.Redirect("Cart.aspx");
             }
 
             if (Request.Form["action"] == "update")
@@ -83,7 +100,7 @@ namespace Pro_Devs
                 int productId = Convert.ToInt32(Request.Form["productId"]);
                 int quantity = Convert.ToInt32(Request.Form["quantity"]);
                 UpdateQuantity(productId, quantity);
-                Response.Redirect("Checkout.aspx");
+                Response.Redirect("Cart.aspx");
             }
         }
 

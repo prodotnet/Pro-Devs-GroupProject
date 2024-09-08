@@ -19,9 +19,11 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/home/wat2.jpg" class="d-block w-100 carousel-image" alt="Watch 2">
+      <img src="img/1Rolexx.jpg" class="d-block w-100 carousel-image" alt="Watch 2">
       <div class="carousel-caption d-none d-md-block">
-         <p>Rolex watches are celebrated for their reliability, luxurious materials, and their role as a status symbol in the world of horology.</p>
+          <h1 class="display-4">Welcome to WatchHub!</h1>
+          <p class="lead">Redefining time keeping.</p>
+          <p>Rolex watches are celebrated for their reliability, luxurious materials, and their role as a status symbol in the world of horology.</p>
           <p>
 
           <a href="#Products" class="btn btn-success">Products</a>
@@ -30,15 +32,16 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/home/w3.jpg" class="d-block w-100 carousel-image" alt="Watch 3">
+      <img src="img/1omega1.jpg"  class="d-block w-100 carousel-image" alt="Watch 3">
       <div class="carousel-caption d-none d-md-block">
-      
-      <p>Smart watches provide seamless integration with your smartphone, allowing you to manage notifications, track activities, and access apps right from your wrist.</p>
-      <p>
+       <h1 class="display-4">Welcome to WatchHub!</h1>
+        <p class="lead">Redefining time keeping.</p>
+        <p>Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>
+        <p>
 
          <a href="#Products" class="btn btn-success">Products</a>
          <a href="#Catagorty" class="btn btn-warning">Browse Categories</a>
-      </p>
+       </p>
       
       </div>
     </div>
@@ -74,7 +77,7 @@
          <!-- Rolex Watches -->
         <div class="col-md-4 mb-4">
             <div class="watch-card  text-center">
-                <img src="img/rolexHo.jpg" class="img-fluid" alt="Watches">
+                <img src="img/1Rolexx.jpg"" class="img-fluid" alt="Watches">
                 <div class="ad-content">
                     <h3 class="text-warning">Rolex</h3>
                      <p class="text-description">Explore our collection of premium Rolex watches known for their luxury and precision.</p>
@@ -88,7 +91,7 @@
         <!-- Omega Watches -->
         <div class="col-md-4 mb-4">
         <div class=" watch-card  text-center">
-         <img src="img/Om.jpg" class="card-img-top img-fluid" alt="Watches">
+         <img src="img/1omega1.jpg" class="card-img-top img-fluid" alt="Watches">
           <div class="card-body ad-content">
            <h3 class="text-warning">Omega</h3>
            <p class="text-description">Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>    

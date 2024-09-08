@@ -17,7 +17,7 @@
 }
 
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-        color: #007bff; 
+    color: #007bff; 
 }
 
 
@@ -75,8 +75,8 @@ body {
 }
 
 .ad-card img {
-     height: 200px;
-     width:200px;
+    height: 200px;
+    width:200px;
     object-fit: cover;
 }
 
@@ -90,19 +90,21 @@ body {
    margin-bottom: 10px;
 }
 
-    .ad-content p {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-    }
+.ad-content p {
+   font-size: 1.1rem;
+   margin-bottom: 15px;
+}
 
-    .ad-content .btn-primary {
-        background-color: #007bff;
-        border: none;
-    }
+.ad-content .btn-primary {
+  
+   background-color: #007bff;
+   border: none;
+}
 
-  .ad-content .btn-primary:hover {
-            background-color: #0056b3;
-        }
+.ad-content .btn-primary:hover {
+  
+    background-color: #0056b3;
+}
 
 /* Phone Card Section */
 .phone-card-section {
@@ -199,10 +201,11 @@ hr{
     padding: 5px;
 }
 
-    .form-select:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); 
-    }
+.form-select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); 
+    
+}
 
 label {
     font-weight: bold;
@@ -213,11 +216,10 @@ label {
     display: flex;
     align-items: center;
 }
-
-    .shopping img {
-        width: 24px;
-        height: 24px;
-    }
+.shopping img {
+    width: 24px;
+    height: 24px;
+}
 
 .quantity {
     margin-left: 10px;
@@ -229,15 +231,15 @@ label {
     margin-bottom: 10px;
 }
 
-    .item img {
-        width: 100px;
-        height: auto;
-        margin-right: 10px;
-    }
+.item img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
 
-    .item .title {
+.item .title {
         flex: 1;
-    }
+}
 
 .card {
     margin-top: 20px;

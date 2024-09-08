@@ -37,7 +37,7 @@ namespace Pro_Devs
                     Nonlogged.Visible = false;
                     imgId.Visible = false;
 
-
+                    
 
 
                     welcomeMessage.InnerHtml = $"<span class='text-success' style='font-size: 20px;'>{userType}</span> <span class='text-warning' style='font-size: 18px;'>{firstName}</span> <span class='text-warning' style='font-size: 18px;'>{lastName}</span>";
@@ -89,13 +89,13 @@ namespace Pro_Devs
         {
             try
             {
-                int cartItemCount = SC.GetCartItemCount(userId); // Assuming this method exists in your service client
+                int cartItemCount = SC.GetCartItemCount(userId); 
                 cartCount.InnerText = cartItemCount.ToString();
             }
             catch (Exception ex)
             {
-                // Handle exceptions (e.g., log the error)
-                cartCount.InnerText = "0"; // Default to 0 if there's an issue
+               
+                cartCount.InnerText = "0"; 
             }
         }
     }

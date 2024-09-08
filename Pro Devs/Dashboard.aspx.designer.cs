@@ -11,43 +11,43 @@ namespace Pro_Devs
 {
 
 
-    public partial class Checkout
+    public partial class Dashboard
     {
 
         /// <summary>
-        /// ShoppingCart control.
+        /// lblTotalProductsSold control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ShoppingCart;
+        protected global::System.Web.UI.WebControls.Label lblTotalProductsSold;
 
         /// <summary>
-        /// TotalAmount control.
+        /// lblTotalOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TotalAmount;
+        protected global::System.Web.UI.WebControls.Label lblTotalOrders;
 
         /// <summary>
-        /// btnCheckout control.
+        /// lblAvailableStock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheckout;
+        protected global::System.Web.UI.WebControls.Label lblAvailableStock;
 
         /// <summary>
-        /// lblError control.
+        /// lblRegisteredUsersToday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label lblRegisteredUsersToday;
     }
 }

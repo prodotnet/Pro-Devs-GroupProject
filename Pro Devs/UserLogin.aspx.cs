@@ -29,19 +29,34 @@ namespace Pro_Devs
 
             string hashedPassword = Secrecy.HashPassword(Password);
 
-           var userlogin = SC.Login(Email, hashedPassword);
-
-
+            var userlogin = SC.Login(Email, hashedPassword);
 
             if (userlogin != null)
             {
-                Session["UserId"] = userlogin.Id;
-                Session["Name"] = userlogin.FirstName;
-                Session["Surname"] = userlogin.LastName;
-                Session["Email"] = userlogin.Email;
-                Session["UserType"] = userlogin.UserType;
 
-                Response.Redirect("Home.aspx");
+                if (userlogin.UserType == "Manager")
+                {
+                    Session["UserId"] = userlogin.Id;
+                    Session["Name"] = userlogin.FirstName;
+                    Session["Surname"] = userlogin.LastName;
+                    Session["Email"] = userlogin.Email;
+                    Session["UserType"] = userlogin.UserType;
+                    Response.Redirect("Dashboard.aspx");
+
+                }
+                else if (userlogin.UserType == "Customer")
+                {
+                    Session["UserId"] = userlogin.Id;
+                    Session["Name"] = userlogin.FirstName;
+                    Session["Surname"] = userlogin.LastName;
+                    Session["Email"] = userlogin.Email;
+                    Session["UserType"] = userlogin.UserType;
+                    Response.Redirect("Home.aspx");
+
+                }
+
+                return;
+
             }
             else
             {
@@ -50,8 +65,8 @@ namespace Pro_Devs
 
 
         }
-        
+
     }
 
-    
+
 }

@@ -97,6 +97,36 @@
   <wsdl:message name="IService_Checkout_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckoutResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetBestSellingProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBestSellingProduct" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetBestSellingProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBestSellingProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRegisteredUsersCountByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredUsersCountByDate" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRegisteredUsersCountByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredUsersCountByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTotalProductsSold_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalProductsSold" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTotalProductsSold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalProductsSoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTotalOrdersPlaced_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalOrdersPlaced" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTotalOrdersPlaced_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalOrdersPlacedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetProductsInSockCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsInSockCount" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetProductsInSockCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsInSockCountResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Register" message="tns:IService_Register_InputMessage" />
@@ -157,6 +187,26 @@
     <wsdl:operation name="Checkout">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Checkout" message="tns:IService_Checkout_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckoutResponse" message="tns:IService_Checkout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBestSellingProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetBestSellingProduct" message="tns:IService_GetBestSellingProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetBestSellingProductResponse" message="tns:IService_GetBestSellingProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegisteredUsersCountByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRegisteredUsersCountByDate" message="tns:IService_GetRegisteredUsersCountByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRegisteredUsersCountByDateResponse" message="tns:IService_GetRegisteredUsersCountByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalProductsSold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTotalProductsSold" message="tns:IService_GetTotalProductsSold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTotalProductsSoldResponse" message="tns:IService_GetTotalProductsSold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalOrdersPlaced">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTotalOrdersPlaced" message="tns:IService_GetTotalOrdersPlaced_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTotalOrdersPlacedResponse" message="tns:IService_GetTotalOrdersPlaced_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsInSockCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetProductsInSockCount" message="tns:IService_GetProductsInSockCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetProductsInSockCountResponse" message="tns:IService_GetProductsInSockCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -289,6 +339,51 @@
     </wsdl:operation>
     <wsdl:operation name="Checkout">
       <soap:operation soapAction="http://tempuri.org/IService/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBestSellingProduct">
+      <soap:operation soapAction="http://tempuri.org/IService/GetBestSellingProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegisteredUsersCountByDate">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRegisteredUsersCountByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalProductsSold">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTotalProductsSold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalOrdersPlaced">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTotalOrdersPlaced" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsInSockCount">
+      <soap:operation soapAction="http://tempuri.org/IService/GetProductsInSockCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
