@@ -21,16 +21,17 @@ namespace Pro_Devs
         protected void btnAddProduct_Click(object sender, EventArgs e)
         {
 
-               string urlas = "img/";
+               string ImagUrl = "img/";
             
                 // Create a new product object
                 Product addProduct = new Product
                 {
+                    ImageUrl_ = ImagUrl + fileUploadImage.FileName,
                     Name = txtName.Text,
                     Description = txtDescription.Text,
                     Price = Convert.ToDecimal(txtPrice.Text),
                     Category = ddlCategory.SelectedValue,
-                    ImageUrl_ = urlas+fileUploadImage.FileName
+                    
                 };
 
                 bool result = SC.AddProduct(addProduct);

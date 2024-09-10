@@ -31,7 +31,8 @@ namespace Pro_Devs
 
                 var userId = Convert.ToInt32(Session["UserId"]);
                 string display = "";
-                decimal totalAmount = 0;
+               string checkoutSummary = "";
+               decimal totalAmount = 0;
 
             try
             {
@@ -71,9 +72,21 @@ namespace Pro_Devs
                         display += $"</td>";
                         display += $"<td><a href='Cart.aspx?removeId={item.ProductId}' class='btn btn-danger btn-sm'>Remove</a></td>";
                         display += "</tr>";
+
+
+
+                        checkoutSummary += "<li class='list-group-item d-flex justify-content-between lh-condensed'>";
+                        checkoutSummary += "<div>";
+                        checkoutSummary += $"<h6 class='my-0'>{item.Name}</h6>";
+                        checkoutSummary += "</div>";
+                        checkoutSummary += $"<span class='text-muted'>R{item.Price * item.Quantity:F2}</span>";
+                        checkoutSummary += "</li>";
                     }
+             
+                    totalAmount = Client.ApplyDiscount(totalAmount);
 
                     ShoppingCart.InnerHtml = display;
+                    CheckoutCart.InnerHtml = checkoutSummary;
                     TotalAmount.InnerText = $"Total Amount: R{totalAmount:F2}";
                 }
 
@@ -123,14 +136,19 @@ namespace Pro_Devs
             }
         }
 
-        protected void btnCheckout_Click(object sender, EventArgs e)
+        protected void btnPayment_Click(object sender, EventArgs e)
         {
             var userId = Convert.ToInt32(Session["UserId"]);
+
+            decimal totalAmount = Client.ApplyDiscount(CalculateTotalAmount(userId));
+
+           
             var invoice = Client.Checkout(userId);
 
             if (invoice != null)
             {
-                Response.Redirect("OrderConfirmation.aspx");
+                
+                Response.Redirect($"Invoice.aspx?invoiceId={invoice.Id}");
             }
             else
             {
@@ -138,5 +156,13 @@ namespace Pro_Devs
                 lblError.Visible = true;
             }
         }
+
+      
+        private decimal CalculateTotalAmount(int userId)
+        {
+            var cartItems = Client.GetCartItems(userId);
+            return cartItems.Sum(item => item.Price * item.Quantity);
+        }
+
     }
 }

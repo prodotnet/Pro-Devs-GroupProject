@@ -97,11 +97,11 @@
   <wsdl:message name="IService_Checkout_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckoutResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_GetBestSellingProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBestSellingProduct" />
+  <wsdl:message name="IService_ApplyDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyDiscount" />
   </wsdl:message>
-  <wsdl:message name="IService_GetBestSellingProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBestSellingProductResponse" />
+  <wsdl:message name="IService_ApplyDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyDiscountResponse" />
   </wsdl:message>
   <wsdl:message name="IService_GetRegisteredUsersCountByDate_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRegisteredUsersCountByDate" />
@@ -188,9 +188,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Checkout" message="tns:IService_Checkout_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckoutResponse" message="tns:IService_Checkout_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetBestSellingProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetBestSellingProduct" message="tns:IService_GetBestSellingProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetBestSellingProductResponse" message="tns:IService_GetBestSellingProduct_OutputMessage" />
+    <wsdl:operation name="ApplyDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ApplyDiscount" message="tns:IService_ApplyDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ApplyDiscountResponse" message="tns:IService_ApplyDiscount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetRegisteredUsersCountByDate">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRegisteredUsersCountByDate" message="tns:IService_GetRegisteredUsersCountByDate_InputMessage" />
@@ -346,8 +346,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBestSellingProduct">
-      <soap:operation soapAction="http://tempuri.org/IService/GetBestSellingProduct" style="document" />
+    <wsdl:operation name="ApplyDiscount">
+      <soap:operation soapAction="http://tempuri.org/IService/ApplyDiscount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -12,7 +12,7 @@
                 <asp:Label ID="lblMessage" runat="server" CssClass="text-success"></asp:Label>
                 <asp:Label ID="lblErrorMessage" runat="server" CssClass="text-danger"></asp:Label>
 
-                <asp:Form >
+                 <asp:Form >
                    
                     <div class="form-group">
                         <asp:Label ID="lblImageUrl" runat="server" AssociatedControlID="fileUploadImage" Text="Image:" CssClass="form-label"></asp:Label>

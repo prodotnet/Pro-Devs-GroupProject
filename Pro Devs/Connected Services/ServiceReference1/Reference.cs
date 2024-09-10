@@ -735,11 +735,11 @@ namespace Pro_Devs.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Checkout", ReplyAction="http://tempuri.org/IService/CheckoutResponse")]
         System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Invoice> CheckoutAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetBestSellingProduct", ReplyAction="http://tempuri.org/IService/GetBestSellingProductResponse")]
-        Pro_Devs.ServiceReference1.Product GetBestSellingProduct();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ApplyDiscount", ReplyAction="http://tempuri.org/IService/ApplyDiscountResponse")]
+        decimal ApplyDiscount(decimal totalAmount);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetBestSellingProduct", ReplyAction="http://tempuri.org/IService/GetBestSellingProductResponse")]
-        System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product> GetBestSellingProductAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ApplyDiscount", ReplyAction="http://tempuri.org/IService/ApplyDiscountResponse")]
+        System.Threading.Tasks.Task<decimal> ApplyDiscountAsync(decimal totalAmount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetRegisteredUsersCountByDate", ReplyAction="http://tempuri.org/IService/GetRegisteredUsersCountByDateResponse")]
         int GetRegisteredUsersCountByDate(System.DateTime date);
@@ -913,12 +913,12 @@ namespace Pro_Devs.ServiceReference1 {
             return base.Channel.CheckoutAsync(userId);
         }
         
-        public Pro_Devs.ServiceReference1.Product GetBestSellingProduct() {
-            return base.Channel.GetBestSellingProduct();
+        public decimal ApplyDiscount(decimal totalAmount) {
+            return base.Channel.ApplyDiscount(totalAmount);
         }
         
-        public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product> GetBestSellingProductAsync() {
-            return base.Channel.GetBestSellingProductAsync();
+        public System.Threading.Tasks.Task<decimal> ApplyDiscountAsync(decimal totalAmount) {
+            return base.Channel.ApplyDiscountAsync(totalAmount);
         }
         
         public int GetRegisteredUsersCountByDate(System.DateTime date) {

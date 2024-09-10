@@ -157,7 +157,7 @@
 <!-- All Watches Section -->
 <div class="all-watches-section container mt-5" id="Products">
    <!-- Filters Section Heading -->
-<h3 class="text-center text-warning mb-4">Filter Products by Name or Price</h3>
+<h3 class="text-center text-warning mb-4">Product Catalog</h3>
 
     <!-- UpdatePanel  To avoid the page refreshing when clicking the category buttons  -->
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">

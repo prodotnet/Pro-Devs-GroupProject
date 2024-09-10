@@ -57,6 +57,7 @@ namespace Pro_Devs
                 }
 
                 string display = "";
+                string checkoutSummary = "";
                 decimal totalAmount = 0;
 
                 foreach (var item in cartItems)
@@ -85,10 +86,21 @@ namespace Pro_Devs
                     display += "</tr>";
 
 
+                    checkoutSummary += "<li class='list-group-item d-flex justify-content-between lh-condensed'>";
+                    checkoutSummary += "<div>";
+                    checkoutSummary += $"<h6 class='my-0'>{item.Name}</h6>";
+                    checkoutSummary += "</div>";
+                    checkoutSummary += $"<span class='text-muted'>R{item.Price * item.Quantity:F2}</span>";
+                    checkoutSummary += "</li>";
+
+
                 }
 
+                totalAmount = Client.ApplyDiscount(totalAmount);
+
                 Cart.InnerHtml = display;
-                TotalAmount.InnerText = $"Total Amount: R{totalAmount:F2}";
+                CheckoutCart.InnerHtml = checkoutSummary;
+                TotalAmount.InnerText = $"Total Amount: R{totalAmount:F2}"; ;
 
 
             }catch (Exception ex)
@@ -177,7 +189,33 @@ namespace Pro_Devs
             }
         }
 
+        protected void btnPayment_Click(object sender, EventArgs e)
+        {
+            var userId = Convert.ToInt32(Session["UserId"]);
 
+            decimal totalAmount = Client.ApplyDiscount(CalculateTotalAmount(userId));
+
+
+            var invoice = Client.Checkout(userId);
+
+            if (invoice != null)
+            {
+
+                Response.Redirect($"Invoice.aspx?invoiceId={invoice.Id}");
+            }
+            else
+            {
+                lblError.Text = "An error occurred during checkout. Please try again.";
+                lblError.Visible = true;
+            }
+        }
+
+
+        private decimal CalculateTotalAmount(int userId)
+        {
+            var cartItems = Client.GetCartItems(userId);
+            return cartItems.Sum(item => item.Price * item.Quantity);
+        }
 
     }
 

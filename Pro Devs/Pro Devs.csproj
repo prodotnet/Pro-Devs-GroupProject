@@ -98,6 +98,7 @@
     <Content Include="FAQ.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Invoice.aspx" />
     <Content Include="js\Script.js" />
     <Content Include="ProductAddition.aspx" />
     <Content Include="ProductDelete.aspx" />
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProDevs.Master.cs">
       <DependentUpon>ProDevs.Master</DependentUpon>

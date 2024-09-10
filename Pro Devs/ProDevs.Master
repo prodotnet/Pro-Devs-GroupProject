@@ -96,7 +96,7 @@
                             <a class="nav-link text-success" href="Contact.aspx">Contact</a>
                         </li>
                          <li class="nav-item">
-                           <a  class="nav-link text-success"   href="Checkout.aspx">Invoice</a>
+                           <a  class="nav-link text-success"   href="Invoice.aspx">Invoice</a>
                         </li>                       
                      
                     </ul>

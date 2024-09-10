@@ -222,15 +222,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetBestSellingProduct">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetBestSellingProductResponse">
+  <xs:element name="ApplyDiscount">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetBestSellingProductResult" nillable="true" type="q10:Product" />
+        <xs:element minOccurs="0" name="totalAmount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplyDiscountResult" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
