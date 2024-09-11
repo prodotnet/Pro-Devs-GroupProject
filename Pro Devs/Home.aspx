@@ -13,8 +13,8 @@
         <p class="lead">Redefining time keeping.</p>
         <p>Explore our range of products and find the perfect watch for you. We offer a wide selection of the latest watches, from top brands to budget-friendly options.</p>
         <p>
-           <a href="#Products" class="btn btn-success">Products</a>
-           <a href="#Catagorty" class="btn btn-warning">Browse Categories</a>
+           
+           <a href="#Catagorty" class="btn btn-success">Browse Categories</a>
         </p>
       </div>
     </div>
@@ -26,8 +26,8 @@
           <p>Rolex watches are celebrated for their reliability, luxurious materials, and their role as a status symbol in the world of horology.</p>
           <p>
 
-          <a href="#Products" class="btn btn-success">Products</a>
-          <a href="#Catagorty" class="btn btn-warning">Browse Categories</a>
+         
+          <a href="#Catagorty" class="btn btn-success">Browse Categories</a>
       </p>
       </div>
     </div>
@@ -39,8 +39,8 @@
         <p>Experience the timeless  innovation of Omega watches, renowned for their luxury and historic achievements.</p>
         <p>
 
-         <a href="#Products" class="btn btn-success">Products</a>
-         <a href="#Catagorty" class="btn btn-warning">Browse Categories</a>
+        
+         <a href="#Catagorty" class="btn btn-success">Browse Categories</a>
        </p>
       
       </div>
@@ -151,60 +151,5 @@
 
 
  <hr  class="text-success"/>
-
-<asp:ScriptManager ID="ScriptManager1" runat="server" />
-
-<!-- All Watches Section -->
-<div class="all-watches-section container mt-5" id="Products">
-   <!-- Filters Section Heading -->
-<h3 class="text-center text-warning mb-4">Product Catalog</h3>
-
-    <!-- UpdatePanel  To avoid the page refreshing when clicking the category buttons  -->
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-          <div class="container mt-5">
-    <div class="d-flex justify-content-between mb-4">
-
-         <div class="d-flex justify-centre mb-4">
-        <!-- Button Group for Categories -->
-        <div class="btn-group" role="group" aria-label="Product Categories">
-            <asp:Button ID="btnAll" runat="server" CssClass="btn btn-success" Text="All" OnClick="btnAll_Click" />
-            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Smart Watches" OnClick="btnSmartWatches_Click" />
-            <asp:Button ID="Button2" runat="server" CssClass="btn btn-success" Text="Rolex" OnClick="btnRolex_Click" />
-            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success" Text="Omega" OnClick="btnOmega_Click" />
-        </div>
-   </div>
-        <!-- Price Range Filters -->       
-        <div class="d-flex align-items-center">
-            <asp:DropDownList ID="ddlPriceRange" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPriceRange_SelectedIndexChanged" CssClass="form-select">
-                <asp:ListItem Text="Select Price Range" Value="0,400000" />
-                <asp:ListItem Text="0 - 2000" Value="0,2000" />
-                <asp:ListItem Text="2000 - 60000" Value="2000,60000" />
-                <asp:ListItem Text="80000 - 100000" Value="80000,100000" />
-                <asp:ListItem Text="100000 - 400000" Value="100000,400000" />
-            </asp:DropDownList>
-        </div>
-    </div>
-</div>
-
-           
-
-
-   
-            
-            
-            <div class="row" id="AllProducts" runat="server">
-                <!-- Product items will be dynamically loaded here -->
-            </div>
-
-
-
-
-        </ContentTemplate>
-    </asp:UpdatePanel>
-</div>
-
-<hr class="text-success"/>
-
 
 </asp:Content>
