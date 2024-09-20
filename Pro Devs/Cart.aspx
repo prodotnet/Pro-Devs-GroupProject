@@ -36,8 +36,9 @@
                             <!-- Product summary items will be dynamically populated here -->
                         </ul>
                         <div class="text-right mt-4">
-                            <span id="discount" runat="server"></span><br />
-                            <span class="h4 text-dark" id="TotalAmount" runat="server"></span>
+                            <span class="h7 text-dark" id="Subtotal" runat="server"></span><br />
+                            <span class="h6 text-dark" id="TotalAmount" runat="server"></span>
+
                             <br />
                             <asp:Button ID="btnCheckout" runat="server" CssClass="btn btn-success mt-3" Text="Payment" OnClick="btnPayment_Click" />
                         </div>
@@ -46,6 +47,11 @@
             </div>
         </div>
     </div>
-    
+      <div class="col-2">
+       <div class="text-center mt-4">
+           <a href="Products.aspx" class="btn btn-outline-success">Back to Products</a>
+                  
+       </div>
+    </div>
     <asp:Label ID="lblError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
 </asp:Content>

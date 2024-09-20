@@ -5,11 +5,9 @@
     <div class="p-2"></div>
     
 <asp:ScriptManager ID="ScriptManager1" runat="server" />
-
+ <div class="p-4"></div>
 <!-- All Watches Section -->
 <div class="all-watches-section container mt-5" id="Products">
-   <!-- Filters Section Heading -->
-<h3 class="text-center text-warning mb-4">Product Catalog</h3>
 
     <!-- UpdatePanel  To avoid the page refreshing when clicking the category buttons  -->
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">

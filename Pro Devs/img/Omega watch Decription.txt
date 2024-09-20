@@ -12,3 +12,44 @@ This Omega Speedmaster Ex Cart Men's Watch  has undergone a thorough inspection 
 
 .............................................................
 This Rolex Daytona Men's Watch has undergone a thorough inspection of water resistance, accuracy, functionality, and condition. 
+
+
+  <style>
+        /* Dark theme for the table */
+        table.table {
+            background-color: #1c1c1c; /* Dark background for the table */
+            color: #ffffff; /* White text color */
+            border: 2px solid #333333; /* Darker border */
+        }
+
+        /* Header row styles */
+        table.table thead th {
+            background-color: #333333; /* Dark background for headers */
+            color: #ffffff; /* White text for headers */
+            border-color: #444444; /* Border color for header cells */
+        }
+
+        /* Body row styles */
+        table.table tbody td {
+            background-color: #2c2c2c; /* Slightly lighter dark background for rows */
+            color: #ffffff; /* White text color */
+            border-color: #444444; /* Darker border color for body cells */
+        }
+
+        /* Hover effect for table rows */
+        table.table tbody tr:hover {
+            background-color: #3a3a3a; /* Lighter background when hovering over rows */
+        }
+
+        /* Action buttons styling */
+        .btn {
+            color: #fff;
+            background-color: #007bff; /* Bootstrap primary button color */
+            border-color: #007bff;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>

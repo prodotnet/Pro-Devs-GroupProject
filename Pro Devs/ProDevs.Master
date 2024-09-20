@@ -102,7 +102,7 @@
                     </ul>
                    <ul class="navbar-nav ms-auto">
                      <li class="nav-item">
-                      <a class="nav-link text-success" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                      <a class="nav-link text-success" href="WishList.aspx"><i class="fa-solid fa-heart"></i></a>
                     </li>
                    
                        <li class="nav-item position-relative">
@@ -164,7 +164,7 @@
                     </ul>
                    <ul class="navbar-nav ms-auto">
                      <li class="nav-item">
-                      <a class="nav-link text-success" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                     <a class="nav-link text-success" href="WishList.aspx"><i class="fa-solid fa-heart"></i></a>
                     </li>
                    
                        <li class="nav-item position-relative">
@@ -217,9 +217,9 @@
             <div class="col-md-3 mb-4">
                 <h5 class="text-uppercase text-warning">Contact Us</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Phone: +1 234 567 890</a></li>
-                    <li><a href="#" class="text-white">Email: info@prodevs.com</a></li>
-                    <li><span class="text-white">Address: 1234 Street Name, City, State, 12345</span></li>
+                    <li><a href="#" class="text-white text-decoration-none">Phone: +1 234 567 890</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Email: info@prodevs.com</a></li>
+                    <li><span class="text-white text-decoration-none">Address: 1234 Street Name, City, State, 12345</span></li>
                 </ul>
             </div>
 

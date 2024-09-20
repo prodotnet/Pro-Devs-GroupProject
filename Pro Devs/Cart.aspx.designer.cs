@@ -33,13 +33,13 @@ namespace Pro_Devs
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl CheckoutCart;
 
         /// <summary>
-        /// discount control.
+        /// Subtotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl discount;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Subtotal;
 
         /// <summary>
         /// TotalAmount control.

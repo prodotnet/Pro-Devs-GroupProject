@@ -31,8 +31,9 @@ namespace Pro_Devs
 
                 var userId = Convert.ToInt32(Session["UserId"]);
                 string display = "";
-               string checkoutSummary = "";
-               decimal totalAmount = 0;
+                string checkoutSummary = "";
+                decimal totalAmount = 0;
+                decimal VatRate = 0.15m;
 
             try
             {
@@ -82,12 +83,16 @@ namespace Pro_Devs
                         checkoutSummary += $"<span class='text-muted'>R{item.Price * item.Quantity:F2}</span>";
                         checkoutSummary += "</li>";
                     }
-             
-                    totalAmount = Client.ApplyDiscount(totalAmount);
+
+                   
+                    decimal VatAmount = totalAmount * VatRate;
+                    decimal AmountWithVat = totalAmount + VatAmount ;
+                    
 
                     ShoppingCart.InnerHtml = display;
                     CheckoutCart.InnerHtml = checkoutSummary;
-                    TotalAmount.InnerText = $"Total Amount: R{totalAmount:F2}";
+                    Subtotal.InnerText = $"Subtotal : R{totalAmount:F2} + VAT (15%): R{VatAmount:F2}";
+                    TotalAmount.InnerText = $"Total Amount due: R{AmountWithVat:F2}";
                 }
 
             }

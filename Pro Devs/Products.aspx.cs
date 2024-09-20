@@ -51,7 +51,6 @@ namespace Pro_Devs
                         Display += "<div class='watch-content'>";
                         Display += "<h5 class='text-success'>" + p.Name + "</h5>";
                         Display += "<p class='text-warning'> R" + p.Price + "</p>";
-                        Display += "<p class='text-warning'>★★★☆☆</p>";
                         Display += "<p class='text-description'>" + p.Description + "</p>";
                         Display += "<a href='ProductEdit.aspx?Id=" + p.Id + "' class='btn btn-success me-2' >Edit Product</a>";
                         Display += "<a href='ProductDelete.aspx?Id=" + p.Id + "' class='btn btn-warning'>Delete Product</a>";
@@ -67,11 +66,11 @@ namespace Pro_Devs
                         Display += "<div class='watch-content'>";
                         Display += "<h5 class='text-success'>" + p.Name + "</h5>";
                         Display += "<p class='text-warning'> R" + p.Price + "</p>";
-                        Display += "<p class='text-warning'>★★★☆☆</p>";
-                        Display += "<p class='text-description'>" + p.Description + "</p>";
-                        Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
-                        Display += "</div>";
-                        Display += "</div>";
+                        Display += "<p><a href='AboutProduct.aspx?Id=" + p.Id + "' class='p-1 text-light text-decoration-none'>More details</a></P>";
+                        Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "'class='btn btn-success ms-1'>Add to Cart</a>";
+                        Display += "<a href='Wishlist.aspx?Id=" + p.Id + "' class='btn btn-success ms-3'><i class='fa-solid fa-heart'></i></a>";                      
+                        Display += "</div>";                       
+                        Display += "</div>";        
                         Display += "</div>";
                     }
 
@@ -123,9 +122,9 @@ namespace Pro_Devs
                             Display += "<div class='watch-content'>";
                             Display += "<h5 class='text-success'>" + p.Name + "</h5>";
                             Display += "<p class='text-warning'> R" + p.Price + "</p>";
-                            Display += "<p class='text-warning'>★★★☆☆</p>";
-                            Display += "<p class='text-description'>" + p.Description + "</p>";
-                            Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                            Display += "<p><a href='AboutProduct.aspx?Id=" + p.Id + "' class='p-1 text-light text-decoration-none'>More details</a></P>";
+                            Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "'class='btn btn-success ms-1'>Add to Cart</a>";
+                            Display += "<a href='Wishlist.aspx?addId=" + p.Id + "' class='btn btn-success ms-3'><i class='fa-solid fa-heart'></i></a>";
                             Display += "</div>";
                             Display += "</div>";
                             Display += "</div>";
@@ -138,7 +137,7 @@ namespace Pro_Devs
                 else
                 {
                     // Handle case where no products are returned
-                    AllProducts.InnerHtml = "<p class='text-danger'>No products available in this category.</p>";
+                    AllProducts.InnerHtml = "<p class='text-success'>No products available in this category.</p>";
                 }
             }
             catch (Exception ex)
@@ -191,9 +190,9 @@ namespace Pro_Devs
                             Display += "<div class='watch-content'>";
                             Display += "<h5 class='text-success'>" + p.Name + "</h5>";
                             Display += "<p class='text-warning'> R" + p.Price + "</p>";
-                            Display += "<p class='text-warning'>★★★☆☆</p>";
-                            Display += "<p class='text-description'>" + p.Description + "</p>";
-                            Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "' class='btn btn-success'>Add to Cart</a>";
+                            Display += "<p><a href='AboutProduct.aspx?Id=" + p.Id + "' class='p-1 text-light text-decoration-none'>More details</a></P>";
+                            Display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "'class='btn btn-success ms-1'>Add to Cart</a>";
+                            Display += "<a href='Wishlist.aspx?addId=" + p.Id + "' class='btn btn-success ms-3'><i class='fa-solid fa-heart'></i></a>";
                             Display += "</div>";
                             Display += "</div>";
                             Display += "</div>";
@@ -205,7 +204,7 @@ namespace Pro_Devs
                 }
                 else
                 {
-                    AllProducts.InnerHtml = "<p class='text-danger'>No products available in this price range.</p>";
+                    AllProducts.InnerHtml = "<p class='text-success'>No products available in this price range.</p>";
                 }
             }
             catch (Exception ex)

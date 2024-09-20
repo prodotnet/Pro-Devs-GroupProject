@@ -114,7 +114,7 @@
                 <div class="new-arrival-content">
                      <h3 class="text-warning">Samsung Smartwatch</h3>
                     <p class="text-description">Experience the future of wearables with the Samsung Smartwatch. Featuring cutting-edge technology, sleek design, and seamless connectivity, this smartwatch is your perfect companion for a smart lifestyle.</p>
-                    <a href="#" class="btn btn-success">View Details</a>
+                   
                 </div>
             </div>
         </div>
@@ -127,7 +127,7 @@
                      <h3 class="text-warning">Rolex</h3>
                      <p class="text-description">Introducing the latest addition to our luxury collection, the Rolex. Known for its timeless elegance and exceptional craftsmanship, this watch is a true symbol of prestige and sophistication.</p>
                    
-                    <a href="#" class="btn btn-success">View Details</a>
+                    
                 </div>
             </div>
         </div>
@@ -139,7 +139,6 @@
                 <div class="new-arrival-content">
                     <h3 class="text-warning">Apple Smartwatch</h3>
                     <p class="text-description">Discover the ultimate blend of style and functionality with the Apple Smartwatch. Packed with advanced features and designed for everyday use, this smartwatch helps you stay connected and active.</p>
-                    <a href="#" class="btn btn-success">View Details</a>
                 </div>
             </div>
         </div>

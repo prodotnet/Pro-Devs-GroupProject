@@ -47,7 +47,11 @@
             </div>
         </div>
     </div>
-    
+       <div class="col-2">
+       <div class="text-center mt-4">
+           <a href="Products.aspx" class="btn btn-outline-success">Back to Products</a>
+                  
+       </div>
+    </div>
     <asp:Label ID="lblError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
-
 </asp:Content>
