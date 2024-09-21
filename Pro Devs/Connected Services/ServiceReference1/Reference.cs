@@ -391,6 +391,9 @@ namespace Pro_Devs.ServiceReference1 {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Pro_Devs.ServiceReference1.InvoiceItem[] InvoiceItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal TotalAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -431,6 +434,19 @@ namespace Pro_Devs.ServiceReference1 {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Pro_Devs.ServiceReference1.InvoiceItem[] InvoiceItems {
+            get {
+                return this.InvoiceItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceItemsField, value) != true)) {
+                    this.InvoiceItemsField = value;
+                    this.RaisePropertyChanged("InvoiceItems");
                 }
             }
         }
@@ -510,6 +526,9 @@ namespace Pro_Devs.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ImageUrl_Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Pro_Devs.ServiceReference1.InvoiceItem[] InvoiceItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -606,6 +625,19 @@ namespace Pro_Devs.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public Pro_Devs.ServiceReference1.InvoiceItem[] InvoiceItems {
+            get {
+                return this.InvoiceItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceItemsField, value) != true)) {
+                    this.InvoiceItemsField = value;
+                    this.RaisePropertyChanged("InvoiceItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Name {
             get {
                 return this.NameField;
@@ -641,6 +673,163 @@ namespace Pro_Devs.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceItem", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class InvoiceItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Pro_Devs.ServiceReference1.Invoice InvoiceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InvoiceIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Pro_Devs.ServiceReference1.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Pro_Devs.ServiceReference1.Invoice Invoice {
+            get {
+                return this.InvoiceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceField, value) != true)) {
+                    this.InvoiceField = value;
+                    this.RaisePropertyChanged("Invoice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceId {
+            get {
+                return this.InvoiceIdField;
+            }
+            set {
+                if ((this.InvoiceIdField.Equals(value) != true)) {
+                    this.InvoiceIdField = value;
+                    this.RaisePropertyChanged("InvoiceId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Pro_Devs.ServiceReference1.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService")]
     public interface IService {
@@ -656,18 +845,6 @@ namespace Pro_Devs.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
         System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.UserRegistration> LoginAsync(string email, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddProduct", ReplyAction="http://tempuri.org/IService/AddProductResponse")]
-        bool AddProduct(Pro_Devs.ServiceReference1.Product product);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddProduct", ReplyAction="http://tempuri.org/IService/AddProductResponse")]
-        System.Threading.Tasks.Task<bool> AddProductAsync(Pro_Devs.ServiceReference1.Product product);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateProduct", ReplyAction="http://tempuri.org/IService/UpdateProductResponse")]
-        bool UpdateProduct(Pro_Devs.ServiceReference1.Product product);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateProduct", ReplyAction="http://tempuri.org/IService/UpdateProductResponse")]
-        System.Threading.Tasks.Task<bool> UpdateProductAsync(Pro_Devs.ServiceReference1.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProduct", ReplyAction="http://tempuri.org/IService/GetProductResponse")]
         Pro_Devs.ServiceReference1.Product GetProduct(int id);
@@ -692,6 +869,18 @@ namespace Pro_Devs.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetProductsByPriceRange", ReplyAction="http://tempuri.org/IService/GetProductsByPriceRangeResponse")]
         System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByPriceRangeAsync(decimal minPrice, decimal maxPrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddProduct", ReplyAction="http://tempuri.org/IService/AddProductResponse")]
+        bool AddProduct(Pro_Devs.ServiceReference1.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddProduct", ReplyAction="http://tempuri.org/IService/AddProductResponse")]
+        System.Threading.Tasks.Task<bool> AddProductAsync(Pro_Devs.ServiceReference1.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateProduct", ReplyAction="http://tempuri.org/IService/UpdateProductResponse")]
+        bool UpdateProduct(Pro_Devs.ServiceReference1.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateProduct", ReplyAction="http://tempuri.org/IService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(Pro_Devs.ServiceReference1.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteProduct", ReplyAction="http://tempuri.org/IService/DeleteProductResponse")]
         bool DeleteProduct(int id);
@@ -734,6 +923,18 @@ namespace Pro_Devs.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Checkout", ReplyAction="http://tempuri.org/IService/CheckoutResponse")]
         System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Invoice> CheckoutAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IService/GetInvoiceDetailsResponse")]
+        Pro_Devs.ServiceReference1.Invoice GetInvoiceDetails(int userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetInvoiceDetails", ReplyAction="http://tempuri.org/IService/GetInvoiceDetailsResponse")]
+        System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Invoice> GetInvoiceDetailsAsync(int userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetInvoiceItems", ReplyAction="http://tempuri.org/IService/GetInvoiceItemsResponse")]
+        Pro_Devs.ServiceReference1.InvoiceItem[] GetInvoiceItems(int invoiceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetInvoiceItems", ReplyAction="http://tempuri.org/IService/GetInvoiceItemsResponse")]
+        System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.InvoiceItem[]> GetInvoiceItemsAsync(int invoiceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ApplyDiscount", ReplyAction="http://tempuri.org/IService/ApplyDiscountResponse")]
         decimal ApplyDiscount(decimal totalAmount);
@@ -809,22 +1010,6 @@ namespace Pro_Devs.ServiceReference1 {
             return base.Channel.LoginAsync(email, password);
         }
         
-        public bool AddProduct(Pro_Devs.ServiceReference1.Product product) {
-            return base.Channel.AddProduct(product);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddProductAsync(Pro_Devs.ServiceReference1.Product product) {
-            return base.Channel.AddProductAsync(product);
-        }
-        
-        public bool UpdateProduct(Pro_Devs.ServiceReference1.Product product) {
-            return base.Channel.UpdateProduct(product);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateProductAsync(Pro_Devs.ServiceReference1.Product product) {
-            return base.Channel.UpdateProductAsync(product);
-        }
-        
         public Pro_Devs.ServiceReference1.Product GetProduct(int id) {
             return base.Channel.GetProduct(id);
         }
@@ -855,6 +1040,22 @@ namespace Pro_Devs.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Product[]> GetProductsByPriceRangeAsync(decimal minPrice, decimal maxPrice) {
             return base.Channel.GetProductsByPriceRangeAsync(minPrice, maxPrice);
+        }
+        
+        public bool AddProduct(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.AddProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddProductAsync(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.AddProductAsync(product);
+        }
+        
+        public bool UpdateProduct(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.UpdateProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(Pro_Devs.ServiceReference1.Product product) {
+            return base.Channel.UpdateProductAsync(product);
         }
         
         public bool DeleteProduct(int id) {
@@ -911,6 +1112,22 @@ namespace Pro_Devs.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Invoice> CheckoutAsync(int userId) {
             return base.Channel.CheckoutAsync(userId);
+        }
+        
+        public Pro_Devs.ServiceReference1.Invoice GetInvoiceDetails(int userid) {
+            return base.Channel.GetInvoiceDetails(userid);
+        }
+        
+        public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.Invoice> GetInvoiceDetailsAsync(int userid) {
+            return base.Channel.GetInvoiceDetailsAsync(userid);
+        }
+        
+        public Pro_Devs.ServiceReference1.InvoiceItem[] GetInvoiceItems(int invoiceId) {
+            return base.Channel.GetInvoiceItems(invoiceId);
+        }
+        
+        public System.Threading.Tasks.Task<Pro_Devs.ServiceReference1.InvoiceItem[]> GetInvoiceItemsAsync(int invoiceId) {
+            return base.Channel.GetInvoiceItemsAsync(invoiceId);
         }
         
         public decimal ApplyDiscount(decimal totalAmount) {

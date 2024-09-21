@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProDevs.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Pro_Devs.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="p-2"></div>
@@ -40,18 +42,22 @@
                             <span class="h6 text-dark" id="TotalAmount" runat="server"></span>
 
                             <br />
-                            <asp:Button ID="btnCheckout" runat="server" CssClass="btn btn-success mt-3" Text="Payment" OnClick="btnPayment_Click" />
+                            
                         </div>
                     </form>
+                    <asp:Button ID="btnCheckout" runat="server" CssClass="btn btn-success mt-3" Text="Payment" OnClick="btnPayment_Click" />
                 </div>
             </div>
         </div>
     </div>
+
       <div class="col-2">
        <div class="text-center mt-4">
-           <a href="Products.aspx" class="btn btn-outline-success">Back to Products</a>
+           <a href="Products.aspx" class="btn btn-outline-success">Continue Shopping</a>
                   
        </div>
     </div>
     <asp:Label ID="lblError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
+    <asp:Label ID="lblInvoiceDetails" runat="server" CssClass="text-success"></asp:Label>
+
 </asp:Content>

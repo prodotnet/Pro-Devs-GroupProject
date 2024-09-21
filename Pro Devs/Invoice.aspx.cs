@@ -14,44 +14,81 @@ namespace Pro_Devs
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserId"] == null)
+            {
+                Response.Redirect("UserLogin.aspx");
+                return;
+            }
             if (!IsPostBack)
             {
-                int invoiceId;
-                if (int.TryParse(Request.QueryString["invoiceId"], out invoiceId))
-                {
-                   // DisplayInvoice(invoiceId);
-                }
-                else
-                {
-                    lblInvoiceDetails.Text = "Invalid invoice ID.";
-                }
+                int userId = Convert.ToInt32(Session["UserId"]);
+                LoadInvoice(userId);
             }
+
+
         }
 
+      
 
-        /**
-        private void DisplayInvoice(int invoiceId)
+        private void LoadInvoice(int userId)
         {
-            var invoice = Client.Checkout(invoiceId); 
+            dynamic invoice = Client.GetInvoiceDetails(userId);
 
             if (invoice != null)
             {
-                lblInvoiceDetails.Text = $"Invoice ID: {invoice.Id}<br />" +
-                                         $"Date: {invoice.Date}<br />" +
-                                         $"Total Amount: R{invoice.TotalAmount:F2}<br />" +
-                                         $"<h5>Items:</h5>";
+                lblName.Text = Session["Name"]?.ToString() ?? "N/A";
+                lblSurname.Text = Session["Surname"]?.ToString() ?? "N/A";
+                lblEmail.Text = Session["Email"]?.ToString() ?? "N/A";
 
-                foreach (var item in invoice.CartItems)
+                lblInvoiceDate.Text = invoice.Date.ToString("d");
+
+                dynamic invoiceItems = Client.GetInvoiceItems(invoice.Id);
+
+                if (invoiceItems == null || invoiceItems.Length == 0)
                 {
-                    lblInvoiceDetails.Text += $"Product: {item.Product.Name} - " +
-                                              $"Quantity: {item.Quantity} - " +
-                                              $"Price: R{item.Price:F2}<br />";
+                    lblError.Text = "No items found for this invoice.";
+                    lblError.Visible = true;
+                }
+                else
+                {
+
+
+
+                    string display = "";
+                    foreach (var item in invoiceItems)
+                    {
+                        display += "<tr class='text-success'>";
+                        display += "<td>" + item.Name + "</td>";
+                        display += "<td>" + item.Quantity + "</td>";
+                        display += $"<td>R{(item.Price * item.Quantity):F2}</td>";
+                        display += "</tr>";
+                    }
+
+
+
+
+                    InvoiceRecord.InnerHtml = display; 
+                    lblTotalAmount.Text = $"R{invoice.TotalAmount:F2}"; 
                 }
             }
             else
             {
-                lblInvoiceDetails.Text = "Invoice not found.";
+                lblError.Text = "No invoice found.";
+                lblError.Visible = true;
             }
-        }**/
+        }
+
+
+        protected void btnContinueShopping_Click(object sender, EventArgs e)
+        {
+            
+            Response.Redirect("Products.aspx");
+        }
+
+        protected void DownloadInvoice_Click(object sender, EventArgs e)
+        {
+            
+        }
+       
     }
 }

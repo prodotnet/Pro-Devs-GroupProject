@@ -22,6 +22,8 @@ namespace Pro_Devs
             {
                 DisplayCart();
             }
+
+         
         }
 
         private void DisplayCart()
@@ -141,28 +143,43 @@ namespace Pro_Devs
             }
         }
 
+
         protected void btnPayment_Click(object sender, EventArgs e)
         {
-            var userId = Convert.ToInt32(Session["UserId"]);
-
-            decimal totalAmount = Client.ApplyDiscount(CalculateTotalAmount(userId));
-
-           
-            var invoice = Client.Checkout(userId);
-
-            if (invoice != null)
+            try
             {
-                
-                Response.Redirect($"Invoice.aspx?invoiceId={invoice.Id}");
+                int userId = Convert.ToInt32(Session["UserId"]);
+                decimal totalAmount = CalculateTotalAmount(userId);
+
+
+                var invoice = Client.Checkout(userId);
+
+                if (invoice != null)
+                {
+                    
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Payment successful! Your invoice has been created')", true);
+                }
+                else
+                {
+                    // Display error if invoice creation failed
+                    lblError.Text = "An error occurred during checkout. Please try again.";
+
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                lblError.Text = "An error occurred during checkout. Please try again.";
+                lblError.Text = "An error occurred: " + ex.Message;
                 lblError.Visible = true;
             }
         }
 
-      
+        protected void btnContinue_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Invoice.aspx");
+        }
+
+
         private decimal CalculateTotalAmount(int userId)
         {
             var cartItems = Client.GetCartItems(userId);

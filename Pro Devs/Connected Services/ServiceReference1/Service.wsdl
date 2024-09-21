@@ -19,18 +19,6 @@
   <wsdl:message name="IService_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_AddProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddProduct" />
-  </wsdl:message>
-  <wsdl:message name="IService_AddProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddProductResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_UpdateProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateProduct" />
-  </wsdl:message>
-  <wsdl:message name="IService_UpdateProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_GetProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProduct" />
   </wsdl:message>
@@ -54,6 +42,18 @@
   </wsdl:message>
   <wsdl:message name="IService_GetProductsByPriceRange_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductsByPriceRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
   </wsdl:message>
   <wsdl:message name="IService_DeleteProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProduct" />
@@ -97,6 +97,18 @@
   <wsdl:message name="IService_Checkout_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckoutResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetInvoiceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInvoiceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInvoiceItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInvoiceItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceItemsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_ApplyDiscount_InputMessage">
     <wsdl:part name="parameters" element="tns:ApplyDiscount" />
   </wsdl:message>
@@ -136,14 +148,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddProduct" message="tns:IService_AddProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddProductResponse" message="tns:IService_AddProduct_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateProduct" message="tns:IService_UpdateProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateProductResponse" message="tns:IService_UpdateProduct_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetProduct" message="tns:IService_GetProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetProductResponse" message="tns:IService_GetProduct_OutputMessage" />
@@ -159,6 +163,14 @@
     <wsdl:operation name="GetProductsByPriceRange">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetProductsByPriceRange" message="tns:IService_GetProductsByPriceRange_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetProductsByPriceRangeResponse" message="tns:IService_GetProductsByPriceRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddProduct" message="tns:IService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddProductResponse" message="tns:IService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateProduct" message="tns:IService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateProductResponse" message="tns:IService_UpdateProduct_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteProduct" message="tns:IService_DeleteProduct_InputMessage" />
@@ -187,6 +199,14 @@
     <wsdl:operation name="Checkout">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Checkout" message="tns:IService_Checkout_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckoutResponse" message="tns:IService_Checkout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetInvoiceDetails" message="tns:IService_GetInvoiceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetInvoiceDetailsResponse" message="tns:IService_GetInvoiceDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetInvoiceItems" message="tns:IService_GetInvoiceItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetInvoiceItemsResponse" message="tns:IService_GetInvoiceItems_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ApplyDiscount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ApplyDiscount" message="tns:IService_ApplyDiscount_InputMessage" />
@@ -229,24 +249,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddProduct">
-      <soap:operation soapAction="http://tempuri.org/IService/AddProduct" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateProduct">
-      <soap:operation soapAction="http://tempuri.org/IService/UpdateProduct" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetProduct">
       <soap:operation soapAction="http://tempuri.org/IService/GetProduct" style="document" />
       <wsdl:input>
@@ -276,6 +278,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductsByPriceRange">
       <soap:operation soapAction="http://tempuri.org/IService/GetProductsByPriceRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -339,6 +359,24 @@
     </wsdl:operation>
     <wsdl:operation name="Checkout">
       <soap:operation soapAction="http://tempuri.org/IService/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDetails">
+      <soap:operation soapAction="http://tempuri.org/IService/GetInvoiceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetInvoiceItems" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
