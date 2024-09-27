@@ -7,7 +7,7 @@
     <div class="p-2"></div>
     <div class="p-2"></div>
     <div class="container mt-5">
-        <h4 class="text-center text-warning mb-4">Shopping Cart</h4>
+        <h4 class="text-center text-warning mb-4">Your Cart</h4>
         <div class="row">
             <!-- Cart Table Column -->
             <div class="watch-card col-md-8">

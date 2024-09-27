@@ -20,6 +20,7 @@ namespace Pro_Devs
             {
                 Manager = Session["UserType"] != null && Session["UserType"].ToString() == "Manager";
                 GetProducts();
+                GetBestSellingProducts();
             }
 
 
@@ -80,7 +81,33 @@ namespace Pro_Devs
             }
         }
 
+        private void GetBestSellingProducts()
+        {
+            string display = "";
 
+            dynamic bestSellingProducts = SC.GetBestSellingProducts(); 
+
+            if (bestSellingProducts != null)
+            {
+                foreach (Product p in bestSellingProducts)
+                {
+                    display += "<div class='col-md-4 mb-4'>";
+                    display += "<div class='watch-card text-center'>";
+                    display += "<img src='" + p.ImageUrl_ + "' class='img-fluid' alt='" + p.Name + "'>";
+                    display += "<div class='watch-content'>";
+                    display += "<h5 class='text-success'>" + p.Name + "</h5>";
+                    display += "<p class='text-warning'> R" + p.Price + "</p>";
+                    display += "<p><a href='AboutProduct.aspx?Id=" + p.Id + "' class='p-1 text-light text-decoration-none'>More details</a></p>";
+                    display += "<a href='ShoppingCart.aspx?Id=" + p.Id + "' class='btn btn-success ms-1'>Add to Cart</a>";
+                    display += "<a href='Wishlist.aspx?Id=" + p.Id + "' class='btn btn-success ms-3'><i class='fa-solid fa-heart'></i></a>";
+                    display += "</div>";
+                    display += "</div>";
+                    display += "</div>";
+                }
+
+                BestSellingProducts.InnerHtml = display; // Set the inner HTML of the new section
+            }
+        }
 
         //The method to get the products from the database and sort them according to thier catagory
         private void ShowProducts(string category)

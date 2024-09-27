@@ -6,8 +6,8 @@
      <div class="p-2"></div>
     <div class="p-2"></div>
     <div class="container mt-5">
-        <h4 class="text-center text-warning mb-4">Shopping Cart</h4>
-        <div class="row">
+        <h4 class="text-center text-warning mb-4">your Shopping Cart</h4>
+         <div class="row justify-content-center">
             <!-- Cart Table Column -->
             <div class=" watch-card col-md-8">
                 <table class="table table-bordered" style="background-color: #333;">
@@ -30,7 +30,7 @@
     </div>
        <div class="col-2">
        <div class="text-center mt-4">
-           <a href="Products.aspx" class="btn btn-outline-success">Back to Products</a>
+           <a href="Products.aspx" class="btn btn-outline-success">Continue Shopping</a>
                   
        </div>
     </div>
